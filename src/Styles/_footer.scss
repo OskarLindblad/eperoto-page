@@ -1,0 +1,36 @@
+.footer {
+  display: flex;
+  height: 0;
+  height: fit-content; /* Height of the footer */
+  background: #242f41;
+  padding: 3em 6vw 3em 6vw;
+  flex-direction: row;
+  justify-content: space-between;
+
+  .footer-main {
+    color: #fff;
+    max-width: 400px;
+    font-weight: 400;
+    font-size: 17px;
+    p {
+      margin: 0 0 32px 0;
+    }
+    blockquote {
+      margin-bottom: 0px;
+      font-size: 11px;
+      line-height: normal;
+    }
+  }
+
+  .footer-socialMedia {
+    display: flex;
+    flex-direction: column;
+    .socialMedia-icon {
+      padding: 0 0 20px 20px;
+      svg {
+        border: 0.5px solid rgb(250, 250, 250);
+        border-radius: 100%;
+      }
+    }
+  }
+}
