@@ -38,7 +38,7 @@ export default {
       hidden: true,
     },
     {
-      name: "SectionType",
+      name: "sectionType",
       title: "section type",
       type: "string",
       options: {
@@ -49,7 +49,6 @@ export default {
           { value: "collaborators", title: "Collaborators" },
           { value: "news", title: "News" },
           { value: "whyNotYou", title: "Why Not You" },
-
           { value: "teamCarousel", title: "Team Carousel" },
         ],
       },

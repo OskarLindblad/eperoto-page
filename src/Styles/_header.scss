@@ -4,6 +4,7 @@
   position: fixed;
   z-index: 1000;
   width: 100%;
+  padding: 3em 6vw 3em 6vw;
   #logo {
     display: inline-block;
     margin: 0;
@@ -197,6 +198,7 @@
     min-width: 100vw;
     width: 100%;
     min-height: 100vh;
+
     height: 100%;
     margin: 0;
     padding: 12em 6vw 3em 6vw;

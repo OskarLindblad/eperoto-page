@@ -39,11 +39,15 @@ export default function NavBar() {
                   Blog Post
                 </NavLink>
               </li>
-              <li className="menu-item" activeClassName="menu-item-active">
-                <NavLink to="/project">Projects</NavLink>
+              <li className="menu-item">
+                <NavLink to="/project" activeClassName="menu-item-active">
+                  Projects
+                </NavLink>
               </li>
-              <li className="menu-item" activeClassName="menu-item-active">
-                <NavLink to="/about">About</NavLink>
+              <li className="menu-item">
+                <NavLink to="/about" activeClassName="menu-item-active">
+                  About
+                </NavLink>
               </li>
             </ul>
           </div>

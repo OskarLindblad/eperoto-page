@@ -1,4 +1,5 @@
 /*Resets CSS*/
+/*Scroll down for old CSS from the earlier project*/
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -664,6 +665,7 @@ textarea::placeholder {
   position: fixed;
   z-index: 1000;
   width: 100%;
+  padding: 3em 6vw 3em 6vw;
   /** MENU */
   /** NAV */
 }
@@ -975,6 +977,10 @@ textarea::placeholder {
   }
 }
 */
+.homepage-section {
+  height: 100vh;
+}
+
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
