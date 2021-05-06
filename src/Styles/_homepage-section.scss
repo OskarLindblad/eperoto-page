@@ -80,7 +80,7 @@
         }
         strong {
           font-family: "Montserrat", sans-serif;
-          font-size: 2.5em;
+          font-size: 2.3em;
           font-weight: 600;
           margin: 0.294117em -4px 0.441177em -4px;
           line-height: 1.32353em;
@@ -95,6 +95,24 @@
     }
     .section-SepareBlocks-blocks-3 {
       width: 30%;
+    }
+  }
+  /* Collaborators ------------------------------- */
+  &.homepage-section-Collaborators {
+    .section-Collaborators-container {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      flex-wrap: wrap;
+
+      .section-Collaborators-collaborator {
+        width: 20%;
+        margin: auto 1em;
+        img {
+          width: 100%;
+          max-height: 4em;
+        }
+      }
     }
   }
 }

@@ -14,7 +14,6 @@ import WhyNotYou from "../sections/WhyNotYou";
 
 export default function Home() {
   const [homePageSections, setHomePageSections] = useState(null);
-  //const [scrollPosition, setScrollPosition] = useState(0);
 
   useEffect(() => {
     sanityClient
