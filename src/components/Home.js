@@ -60,6 +60,7 @@ export default function Home() {
     }
   };
   //TODO: MOBILE if(width incase <Slide> and replace with div)
+  //TODO: MOBILE ALso kill when weird height
 
   return (
     <main>
