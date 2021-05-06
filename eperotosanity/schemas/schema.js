@@ -8,6 +8,7 @@ import schemaTypes from "all:part:@sanity/base/schema-type";
 import blockContent from "./blockContent";
 import news from "./news";
 import teamMember from "./teamMember";
+
 import project from "./project";
 import homepageSection from "./homepageSection";
 import footer from "./footer";
@@ -23,8 +24,8 @@ export default createSchema({
     // The following are document types which will appear
     // in the studio.
     collaborator,
-    news,
     teamMember,
+    news,
     project,
     homepageSection,
     footer,

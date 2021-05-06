@@ -22,6 +22,13 @@ export default {
         hotspot: true,
       },
     },
+    {
+      // Add to be able to reorder sections
+      name: "order",
+      title: "Order",
+      type: "number",
+      hidden: true,
+    },
   ],
   preview: {
     select: {

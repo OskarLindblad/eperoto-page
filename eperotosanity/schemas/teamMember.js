@@ -1,23 +1,25 @@
 /* eslint-disable import/no-anonymous-default-export */
 export default {
   name: "teamMember",
-  title: "TeamMember",
+  title: "Team Member",
   type: "document",
   fields: [
     {
-      name: "name",
-      title: "Name",
+      name: "firstName",
+      title: "First Name",
       type: "string",
     },
     {
-      name: "slug",
-      title: "Slug",
-      type: "slug",
-      options: {
-        source: "name",
-        maxLength: 96,
-      },
+      name: "lastName",
+      title: "Last Name",
+      type: "string",
     },
+    {
+      name: "email",
+      title: "E-mail",
+      type: "string",
+    },
+
     {
       name: "image",
       title: "Image",
@@ -25,6 +27,13 @@ export default {
       options: {
         hotspot: true,
       },
+    },
+    {
+      // Add to be able to reorder sections
+      name: "order",
+      title: "Order",
+      type: "number",
+      hidden: true,
     },
     {
       name: "bio",
@@ -42,7 +51,7 @@ export default {
   ],
   preview: {
     select: {
-      title: "name",
+      title: "firstName",
       media: "image",
     },
   },
