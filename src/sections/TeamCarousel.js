@@ -9,15 +9,17 @@ export default function TeamCarousel(props) {
       backgroundColor,
       //order,
     },
+    index,
   } = props;
   return (
     <article
-      className="homepage-section"
+      className={`homepage-section homepage-section-TeamCarousel homepage-section-padding
+      homepage-section-${index}`}
       style={{
         backgroundColor: backgroundColor ? backgroundColor : "#2e394b",
       }}
     >
-      TeamCarousel
+      TeamCarousel{index}
     </article>
   );
 }

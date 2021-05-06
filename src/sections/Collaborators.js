@@ -12,7 +12,8 @@ export default function Collaborators(props) {
   } = props;
   return (
     <article
-      className="homepage-section"
+      className="homepage-section homepage-section-Collaborators 
+      homepage-section-padding"
       style={{
         backgroundColor: backgroundColor ? backgroundColor : "#2e394b",
       }}

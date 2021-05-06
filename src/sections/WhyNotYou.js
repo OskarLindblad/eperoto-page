@@ -9,15 +9,17 @@ export default function WhyNotYou(props) {
       backgroundColor,
       //order,
     },
+    index,
   } = props;
   return (
     <article
-      className="homepage-section"
+      className={`homepage-section homepage-section-WhyNotYou homepage-section-padding
+      homepage-section-${index}`}
       style={{
         backgroundColor: backgroundColor ? backgroundColor : "#2e394b",
       }}
     >
-      WhyNotYou
+      WhyNotYou{index}
     </article>
   );
 }

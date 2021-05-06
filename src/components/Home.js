@@ -1,5 +1,8 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState } from "react";
 import sanityClient from "../client.js";
+import { FullPage, Slide } from "react-full-page";
+
+import Footer from "../components/Footer";
 
 import BigBackground from "../sections/BigBackground";
 import Collaborators from "../sections/Collaborators";
@@ -11,9 +14,7 @@ import WhyNotYou from "../sections/WhyNotYou";
 
 export default function Home() {
   const [homePageSections, setHomePageSections] = useState(null);
-  const [scrollPosition, setScrollPosition] = useState(0);
-  console.log(scrollPosition);
-  let refs = useRef([]);
+  //const [scrollPosition, setScrollPosition] = useState(0);
 
   useEffect(() => {
     sanityClient
@@ -21,7 +22,12 @@ export default function Home() {
         `*[_type == "homepageSection"]{
           caption,
           content,
-          image,
+          image{
+            asset->{
+              _id,
+              url
+            }
+          },
           sectionType,
           backgroundColor,
           order
@@ -36,85 +42,37 @@ export default function Home() {
   let sections;
   if (homePageSections) {
     sections = homePageSections.sort((a, b) => (a.order > b.order ? 1 : -1));
-  } // else { dummy array for nicer load?}
-  const createSection = (section) => {
+  } // TODO else { dummy array for nicer load?}
+  const createSection = (section, index) => {
     if (section.sectionType === "bigBackground") {
-      return <BigBackground sectionData={section} />;
+      return <BigBackground sectionData={section} index={index} />;
     } else if (section.sectionType === "oneBlock") {
-      return <OneBlock sectionData={section} />;
+      return <OneBlock sectionData={section} index={index} />;
     } else if (section.sectionType === "separeBlocks") {
-      return <SepareBlocks sectionData={section} />;
+      return <SepareBlocks sectionData={section} index={index} />;
     } else if (section.sectionType === "collaborators") {
-      return <Collaborators sectionData={section} />;
+      return <Collaborators sectionData={section} index={index} />;
     } else if (section.sectionType === "news") {
-      return <NewsSection sectionData={section} />;
+      return <NewsSection sectionData={section} index={index} />;
     } else if (section.sectionType === "whyNotYou") {
-      return <WhyNotYou sectionData={section} />;
+      return <WhyNotYou sectionData={section} index={index} />;
     } else if (section.sectionType === "teamCarousel") {
-      return <TeamCarousel sectionData={section} />;
+      return <TeamCarousel sectionData={section} index={index} />;
     }
   };
-
-  const handleScroll = () => {
-    const position = window.pageYOffset;
-    setScrollPosition(position);
-    scrollTo();
-  };
-
-  const scrollTo = () => {
-    window.scrollTo({ top: 900 });
-  };
-
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll, { passive: true });
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-
-  /*useEffect(() => {
-   const screenHeight = window.innerHeight;
-    const section = parseInt(scrollPosition / screenHeight);
-    const scrollToNext = 100;
-    const scrollToAbove = screenHeight - scrollToNext;
-
-    if (
-      scrollPosition % screenHeight > scrollToNext ||
-      scrollPosition % screenHeight < scrollToAbove
-    ) {
-      if (scrollPosition % screenHeight > scrollToNext)
-        window.scrollTo(0, (section + 1) * screenHeight);
-      if (scrollPosition % screenHeight < scrollToAbove)
-        window.scrollTo(0, (section - 1) * screenHeight);
-    }
-
-    console.log(scrollPosition % screenHeight);
-  }, []);*/
+  //TODO: MOBILE if(width incase <Slide> and replace with div)
 
   return (
     <main>
-      <section>
+      <FullPage controls>
         {sections &&
           sections.map((section, index) => (
-            <div
-              key={index}
-              ref={(element) => {
-                refs.current[index] = element;
-              }}
-            >
-              {createSection(section)}
-            </div>
+            <Slide key={index}>{createSection(section, index)}</Slide>
           ))}
-      </section>
-      <button
-        onClick={() => refs.current[2].scrollIntoView({ behavior: "smooth" })}
-      >
-        Klick
-      </button>
+        <Slide>
+          <Footer />
+        </Slide>
+      </FullPage>
     </main>
   );
 }
-
-/*...(timeToScroll() && window.scrollTo({ top: 700, behavior: "smooth" }))*/
