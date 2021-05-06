@@ -1,7 +1,7 @@
 /* eslint-disable import/no-anonymous-default-export */
 export default {
-  name: "post",
-  title: "Post",
+  name: "news",
+  title: "News",
   type: "document",
   fields: [
     {
