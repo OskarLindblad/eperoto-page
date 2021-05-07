@@ -24,8 +24,8 @@ export default function Footer() {
   if (!footer) return <div>Loading...</div>;
 
   return (
-    <footer className="footer">
-      <div className="footer-main">
+    <footer className="footer ">
+      <div className="footer-main ">
         <a href={`mailto:${footer.mail}`} className="mail">
           {footer.mail}
         </a>

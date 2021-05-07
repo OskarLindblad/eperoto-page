@@ -1,15 +1,10 @@
 import React, { useEffect, useState } from "react";
-import ExpandingLine from "../components/ExpandingLine";
 import sanityClient from "../client.js";
+import Carusel from "../components/Carusel";
 
 export default function TeamCarousel(props) {
   const {
-    sectionData: {
-      caption,
-      //content,
-      //image,
-      backgroundColor,
-    },
+    sectionData: { caption, backgroundColor },
   } = props;
 
   const [team, setTeam] = useState(null);
@@ -37,6 +32,10 @@ export default function TeamCarousel(props) {
       .catch(console.error);
   }, []);
 
+  let teamMember;
+  if (team) {
+    teamMember = team.sort((a, b) => (a.order > b.order ? 1 : -1));
+  }
   return (
     <article
       className="homepage-section homepage-section-TeamCarousel homepage-section-padding"
@@ -44,8 +43,7 @@ export default function TeamCarousel(props) {
         backgroundColor: backgroundColor ? backgroundColor : "#2e394b",
       }}
     >
-      <h4 className="homepage-section-caption">{caption}</h4>
-      <ExpandingLine />
+      <Carusel slideData={teamMember} caption={caption} />
     </article>
   );
 }

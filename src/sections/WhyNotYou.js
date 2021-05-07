@@ -7,7 +7,6 @@ export default function WhyNotYou(props) {
       //content,
       //image,
       backgroundColor,
-      //order,
     },
     index,
   } = props;

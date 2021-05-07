@@ -1125,7 +1125,7 @@ textarea::placeholder {
   max-height: 4em;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 769px) {
   .homepage-section h2 {
     font-family: "Montserrat", sans-serif;
     font-size: 2em;
@@ -1175,6 +1175,185 @@ textarea::placeholder {
   -webkit-transition: width 2s;
   transition: width 2s;
   margin-bottom: 26px;
+}
+
+.slider {
+  position: relative;
+  height: 60vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 0 4vw;
+}
+
+.slider .slider-presentation {
+  width: 100%;
+  margin-right: 2em;
+}
+
+.slider .slider-presentation .slider-title {
+  font-family: "Montserrat", sans-serif;
+  font-size: 2.3em;
+  font-weight: 600;
+  margin: 0.294117em -4px 0.441177em -4px;
+  line-height: 1.32353em;
+}
+
+.slider .slider-image {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: auto;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.slider .slider-image img {
+  max-height: 40vh;
+  width: 250px;
+}
+
+.slider .slider-left-arrow,
+.slider .slider-right-arrow {
+  position: absolute;
+  top: 95%;
+  border: solid #ffffff;
+  border-width: 0 5px 5px 0;
+  display: inline-block;
+  padding: 1em;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.slider .slider-right-arrow {
+  right: 32px;
+  z-index: 10;
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+}
+
+.slider .slider-left-arrow {
+  left: 32px;
+  z-index: 10;
+  transform: rotate(135deg);
+  -webkit-transform: rotate(135deg);
+}
+
+.slider .slider-contact-btn {
+  border: solid #ffffff 1px;
+  display: inline-block;
+  padding: 1em;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  text-decoration: none;
+  background-color: #2e394b;
+  padding: 18px 0;
+  cursor: pointer;
+  line-height: 1;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 10px 0 0 0;
+  -webkit-transition: color 0.7s ease-in-out;
+  transition: color 0.7s ease-in-out;
+}
+
+.slider .slider-contact-btn :first-child {
+  margin: auto;
+}
+
+.slider .slider-contact-btn:hover {
+  background-color: #fff;
+  color: #2e394b;
+}
+
+.slider .slide {
+  opacity: 0;
+  -webkit-transition-duration: 1s ease;
+          transition-duration: 1s ease;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.slider .slide.active {
+  opacity: 1;
+  -webkit-transition-duration: 1s;
+          transition-duration: 1s;
+  -webkit-transform: scale(1.08);
+          transform: scale(1.08);
+}
+
+@media screen and (max-width: 1025px) {
+  .slider .slider-left-arrow,
+  .slider .slider-right-arrow {
+    position: absolute;
+    top: 110%;
+    border: solid #ffffff;
+    border-width: 0 3px 3px 0;
+    padding: 1em;
+  }
+}
+
+@media screen and (max-width: 769px) {
+  .slider .slider-image img {
+    max-height: 40vh;
+    width: 200px;
+  }
+  .slider .slider-left-arrow,
+  .slider .slider-right-arrow {
+    position: absolute;
+    top: 8%;
+    border: solid #ffffff;
+    border-width: 0 5px 5px 0;
+    display: inline-block;
+    padding: 1em;
+    cursor: pointer;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+  }
+  .slider .slider-contact-btn {
+    width: 200px;
+  }
+  .slider .slider-contact-btn :first-child {
+    margin: auto;
+  }
+  .slider .slide {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+  }
 }
 
 * {
