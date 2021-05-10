@@ -27,7 +27,6 @@ export default function News() {
       .catch(console.error);
   }, []);
 
-  console.log(newsData);
   return (
     <>
       <main className="News-page">

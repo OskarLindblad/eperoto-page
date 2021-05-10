@@ -620,6 +620,7 @@ textarea::placeholder {
   max-width: 400px;
   font-weight: 400;
   font-size: 17px;
+  margin: auto 0 0 0;
 }
 
 .footer .footer-main p {
@@ -918,9 +919,9 @@ textarea::placeholder {
 
 .header #nav a {
   display: inline-block;
-  font-family: axiformabold, sans-serif;
-  font-weight: normal;
-  font-size: 3em;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 2.3em;
   line-height: 1.32353em;
   color: #2e394b;
   text-decoration: none;
@@ -950,14 +951,13 @@ textarea::placeholder {
   color: #fff;
 }
 
-/*Check later
 @media (max-width: 768px) {
-  #logo img,
-  .nav-up #logo img,
-  .menu_close .nav-up #logo img {
+  #logo,
+  .nav-up #logo,
+  .menu_close .nav-up #logo {
     max-width: 25vw;
     width: auto;
-    height: auto;
+    height: auto !important;
   }
   #nav-menu {
     margin-right: 1em;
@@ -969,10 +969,10 @@ textarea::placeholder {
     margin: 2em 0;
   }
   #nav a {
-    font-size: 24px;
+    font-size: 24px !important;
   }
 }
-*/
+
 .full-page-controls button {
   display: none;
 }
@@ -985,6 +985,20 @@ textarea::placeholder {
   /* Collaborators ------------------------------- */
   /* News ------------------------------- */
   /* WhyNotYou ------------------------------- */
+}
+
+.homepage-section .homepage-section-container {
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .homepage-section.homepage-section-blackText p,

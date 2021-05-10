@@ -43,7 +43,9 @@ export default function TeamCarousel(props) {
         backgroundColor: backgroundColor ? backgroundColor : "#2e394b",
       }}
     >
-      <Carusel slideData={teamMember} caption={caption} />
+      <div className="homepage-section-container">
+        <Carusel slideData={teamMember} caption={caption} />
+      </div>
     </article>
   );
 }

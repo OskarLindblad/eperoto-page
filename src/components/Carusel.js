@@ -3,7 +3,6 @@ import ExpandingLine from "../components/ExpandingLine";
 import BlockContent from "@sanity/block-content-to-react";
 
 const Carusel = ({ slideData, caption }) => {
-  console.log(slideData);
   const [current, setCurrent] = useState(0);
   let length = slideData ? slideData.length : 0;
 

@@ -4,12 +4,7 @@ import BlockContent from "@sanity/block-content-to-react";
 
 export default function SepareBlocks(props) {
   const {
-    sectionData: {
-      caption,
-      content,
-      //image,
-      backgroundColor,
-    },
+    sectionData: { caption, content, backgroundColor },
   } = props;
 
   let newContent = [];
@@ -31,17 +26,19 @@ export default function SepareBlocks(props) {
         backgroundColor: backgroundColor ? backgroundColor : "#2e394b",
       }}
     >
-      <h4 className="homepage-section-caption">{caption}</h4>
-      <div className="section-SepareBlocks-text-content">
-        {newContent.map((contentSection, index) => (
-          <BlockContent
-            key={index}
-            blocks={contentSection}
-            projectId="1ta3690e"
-            dataset="production"
-            className={`section-SepareBlocks-text-block  section-SepareBlocks-blocks-${newContent.length}`}
-          />
-        ))}
+      <div className="homepage-section-container">
+        <h4 className="homepage-section-caption">{caption}</h4>
+        <div className="section-SepareBlocks-text-content">
+          {newContent.map((contentSection, index) => (
+            <BlockContent
+              key={index}
+              blocks={contentSection}
+              projectId="1ta3690e"
+              dataset="production"
+              className={`section-SepareBlocks-text-block  section-SepareBlocks-blocks-${newContent.length}`}
+            />
+          ))}
+        </div>
       </div>
     </article>
   );

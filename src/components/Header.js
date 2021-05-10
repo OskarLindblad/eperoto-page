@@ -5,6 +5,13 @@ import eperotoLogo from "../images/Eperoto-Logo-1.png";
 export default function NavBar() {
   const [menuToggle, setMenuToggle] = useState(false);
 
+  if (menuToggle) {
+    setTimeout(function () {
+      document.querySelector("html").style.overflow = "hidden";
+    }, 500);
+  } else {
+    document.querySelector("html").style.overflow = "auto";
+  }
   return (
     <header className="header">
       <NavLink to="/" exact>
@@ -35,19 +42,22 @@ export default function NavBar() {
                 </NavLink>
               </li>
               <li className="menu-item">
-                <NavLink to="/post" activeClassName="menu-item-active">
-                  Blog Post
+                <NavLink to="/news" activeClassName="menu-item-active">
+                  Latest news
                 </NavLink>
               </li>
               <li className="menu-item">
-                <NavLink to="/project" activeClassName="menu-item-active">
-                  Projects
+                <NavLink to="/positions" activeClassName="menu-item-active">
+                  Open positions
                 </NavLink>
               </li>
               <li className="menu-item">
-                <NavLink to="/about" activeClassName="menu-item-active">
-                  About
+                <NavLink to="/contact" activeClassName="menu-item-active">
+                  Contact
                 </NavLink>
+              </li>
+              <li className="menu-item">
+                <NavLink to="/">Log In</NavLink>
               </li>
             </ul>
           </div>

@@ -26,7 +26,6 @@ export default function Position() {
       .catch(console.error);
   }, []);
 
-  console.log(positionData);
   return (
     <>
       <main className="Positions-page">

@@ -5,6 +5,12 @@
 }
 
 .homepage-section {
+  .homepage-section-container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
   &.homepage-section-blackText {
     p,
     h1,

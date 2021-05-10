@@ -39,21 +39,23 @@ export default function NewsSection(props) {
         backgroundColor: backgroundColor ? backgroundColor : "#2e394b",
       }}
     >
-      {newsData &&
-        newsData.map((news, index) => (
-          <article key={index}>
-            <Link to={"/news/" + news.slug.current} key={news.slug.current}>
-              <div className="homepage-section-News-single">
-                <h3>{news.title}</h3>
-                <BlockContent
-                  blocks={news.body}
-                  projectId="1ta3690e"
-                  dataset="production"
-                />
-              </div>
-            </Link>
-          </article>
-        ))}
+      <div className="homepage-section-container">
+        {newsData &&
+          newsData.map((news, index) => (
+            <article key={index}>
+              <Link to={"/news/" + news.slug.current} key={news.slug.current}>
+                <div className="homepage-section-News-single">
+                  <h3>{news.title}</h3>
+                  <BlockContent
+                    blocks={news.body}
+                    projectId="1ta3690e"
+                    dataset="production"
+                  />
+                </div>
+              </Link>
+            </article>
+          ))}
+      </div>
     </article>
   );
 }

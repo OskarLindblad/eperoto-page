@@ -246,9 +246,9 @@
   }
   #nav a {
     display: inline-block;
-    font-family: axiformabold, sans-serif;
-    font-weight: normal;
-    font-size: 3em;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+    font-size: 2.3em;
     line-height: 1.32353em;
     color: #2e394b;
     text-decoration: none;
@@ -274,14 +274,14 @@
     color: #fff;
   }
 }
-/*Check later
+
 @media (max-width: 768px) {
-  #logo img,
-  .nav-up #logo img,
-  .menu_close .nav-up #logo img {
+  #logo,
+  .nav-up #logo,
+  .menu_close .nav-up #logo {
     max-width: 25vw;
     width: auto;
-    height: auto;
+    height: auto !important;
   }
   #nav-menu {
     margin-right: 1em;
@@ -293,7 +293,6 @@
     margin: 2em 0;
   }
   #nav a {
-    font-size: 24px;
+    font-size: 24px !important;
   }
 }
-*/
