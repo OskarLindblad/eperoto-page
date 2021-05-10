@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import ExpandingLine from "../components/ExpandingLine";
 import BlockContent from "@sanity/block-content-to-react";
 
-const ImageSlider = ({ slideData, caption }) => {
+const Carusel = ({ slideData, caption }) => {
   console.log(slideData);
   const [current, setCurrent] = useState(0);
   let length = slideData ? slideData.length : 0;
@@ -44,7 +44,11 @@ const ImageSlider = ({ slideData, caption }) => {
                   />
                 </div>
                 <div className="slider-image">
-                  <img src={slide.image.asset.url} alt="stuff" />
+                  <img
+                    src={slide.image.asset.url}
+                    alt={slide.firstName + " " + slide.lastName}
+                  />
+                  {/*TODO before after / current*/}
                   <a
                     className="slider-contact-btn"
                     href={`mailto:${slide.mail}`}
@@ -61,4 +65,4 @@ const ImageSlider = ({ slideData, caption }) => {
   );
 };
 
-export default ImageSlider;
+export default Carusel;

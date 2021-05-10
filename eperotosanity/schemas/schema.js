@@ -9,10 +9,10 @@ import blockContent from "./blockContent";
 import news from "./news";
 import teamMember from "./teamMember";
 
-import project from "./project";
 import homepageSection from "./homepageSection";
 import footer from "./footer";
 import collaborator from "./collaborator";
+import positions from "./positions";
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -23,10 +23,10 @@ export default createSchema({
   types: schemaTypes.concat([
     // The following are document types which will appear
     // in the studio.
+    news,
     collaborator,
     teamMember,
-    news,
-    project,
+    positions,
     homepageSection,
     footer,
     // When added to this list, object types can be used as

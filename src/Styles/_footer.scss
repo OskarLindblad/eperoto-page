@@ -1,9 +1,8 @@
 .footer {
   display: flex;
-  height: 0;
-  height: fit-content; /* Height of the footer */
+  height: 100vh;
   background: #242f41;
-  padding: 3em 6vw 3em 6vw;
+  padding: 12em 6vw 3em 6vw;
   flex-direction: row;
   justify-content: space-between;
 

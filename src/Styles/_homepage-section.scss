@@ -5,7 +5,22 @@
 }
 
 .homepage-section {
+  &.homepage-section-blackText {
+    p,
+    h1,
+    h2,
+    h3,
+    h4 {
+      color: #2e394b;
+    }
+    .homepage-section-caption {
+      color: #2e394b;
+    }
+  }
   height: 100vh;
+  a {
+    text-decoration: none;
+  }
   h2 {
     font-family: "Montserrat", sans-serif;
     font-size: 3.5em;
@@ -115,6 +130,102 @@
       }
     }
   }
+  /* News ------------------------------- */
+  &.homepage-section-News {
+    p {
+      margin: 0;
+    }
+    article {
+      &:first-child {
+        border-top: 1px solid #2e394b;
+      }
+    }
+    .homepage-section-News-single {
+      border-bottom: 1px solid #2e394b;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      padding: 4em 0;
+      position: relative;
+      h3 {
+        font-family: "Montserrat", sans-serif;
+        flex-shrink: 0;
+        width: 40%;
+        margin: 0 1.5em 0 0;
+        font-size: 1.647059em;
+        line-height: 1.357142em;
+        display: flex;
+        align-items: center;
+        height: auto;
+      }
+      p {
+        max-width: 60%;
+        margin: 0 4.5em 0 0;
+        display: -webkit-box;
+        -webkit-line-clamp: 6;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+      }
+      &::after {
+        content: "\2192";
+        font-family: icons;
+        font-size: 3em;
+        color: #2e394b;
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+    }
+  }
+
+  /* WhyNotYou ------------------------------- */
+  &.homepage-section-WhyNotYou {
+    p {
+      margin: 0;
+    }
+    .homepage-section-caption {
+      border-bottom: 1px solid #ffd778;
+      padding: 0 0 0.5em 0;
+    }
+    .homepage-section-WhyNotYou-single {
+      border-bottom: 1px solid #ffd778;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      padding: 4em 0;
+      position: relative;
+      h3 {
+        font-family: "Montserrat", sans-serif;
+        flex-shrink: 0;
+        width: 40%;
+        margin: 0 1.5em 0 0;
+        font-size: 1.647059em;
+        line-height: 1.357142em;
+        display: flex;
+        align-items: center;
+        height: auto;
+      }
+      p {
+        max-width: 60%;
+        margin: 0 4.5em 0 0;
+        display: -webkit-box;
+        -webkit-line-clamp: 6;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+      }
+      &::after {
+        content: "\2192";
+        font-family: icons;
+        font-size: 3em;
+        color: #ffd778;
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+    }
+  }
 }
 
 @media screen and (max-width: 769px) {
@@ -124,18 +235,24 @@
       font-size: 2em;
     }
   }
+  /* OneBlock ------------------------------- */
+
   &.homepage-section-OneBlock {
     .section-OneBlock-text-content {
-      display: flex;
       flex-direction: column;
-      justify-content: flex-start;
-      width: 100%;
+    }
+  }
+  /* Collaborators ------------------------------- */
 
-      p {
-        width: 100% !important;
+  &.homepage-section-Collaborators {
+    .section-Collaborators-container {
+      .section-Collaborators-collaborator {
+        width: 40% !important;
       }
     }
   }
+  /* SepareBlocks ------------------------------- */
+
   &.homepage-section-SepareBlocks {
     .section-SepareBlocks-text-content {
       display: flex;
@@ -150,6 +267,49 @@
       .section-SepareBlocks-blocks-2,
       .section-SepareBlocks-blocks-3 {
         width: 100% !important;
+      }
+    }
+  }
+  /* News ------------------------------- */
+  &.homepage-section-News {
+    .homepage-section-News-single {
+      flex-direction: column !important;
+
+      h3 {
+        width: 100% !important;
+
+        margin: 0 0 10px 0 !important;
+        font-size: 1.3em !important;
+        height: auto;
+      }
+      p {
+        max-width: 100% !important;
+        margin: 0 0 0 0 !important;
+        display: -webkit-box;
+        -webkit-line-clamp: 3 !important;
+      }
+      &::after {
+        top: 90% !important;
+      }
+    }
+  }
+  /* News ------------------------------- */
+  &.homepage-section-WhyNotYou {
+    .homepage-section-WhyNotYou-single {
+      flex-direction: column !important;
+
+      h3 {
+        width: 100% !important;
+        margin: 0 0 10px 0 !important;
+        font-size: 1.3em !important;
+      }
+      p {
+        max-width: 100% !important;
+        margin: 0 0 0 0 !important;
+        -webkit-line-clamp: 3 !important;
+      }
+      &::after {
+        top: 90% !important;
       }
     }
   }
