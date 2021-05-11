@@ -7,7 +7,7 @@
   padding: 3em 6vw 3em 6vw;
   #logo {
     display: inline-block;
-    margin: -1.2em 0 0 0 !important;
+    margin: -0.8em 0 0 0 !important;
     font-size: 1em;
     line-height: 1em;
     display: block;
@@ -286,6 +286,11 @@
     padding: 2em 6vw 2em 6vw;
     #logo.logo-scrolledDown {
       height: 3.5em !important;
+    }
+    #logo {
+      display: inline-block;
+      margin: -0.8em 0 0 0 !important;
+      font-size: 1em;
     }
   }
   .header-background {

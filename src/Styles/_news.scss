@@ -2,7 +2,7 @@
   .News-page-header-background {
     position: fixed;
     background-color: #2e394b;
-    height: 9.5em;
+    height: 8.3em;
     width: 100vw;
     top: 0;
     left: 0;
@@ -127,12 +127,11 @@
   .News-single-header-background {
     position: fixed;
     background-color: #2e394b;
-    height: 10em;
+    height: 8.3em;
     width: 100vw;
     top: 0;
     left: 0;
     z-index: 1;
-
     border-bottom: 1px solid #fff;
   }
   padding: 12em 6vw 3em 6vw;
@@ -249,5 +248,9 @@
       height: 70px !important;
       top: auto !important;
     }
+  }
+
+  .News-single .News-single-header-background {
+    height: 6.3em !important;
   }
 }

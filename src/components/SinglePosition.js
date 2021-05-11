@@ -4,6 +4,7 @@ import sanityClient from "../client.js";
 import BlockContent from "@sanity/block-content-to-react";
 import Footer from "./Footer";
 import { Link } from "react-router-dom";
+import scrollPosition from "../modules/scrollPosition";
 
 export default function SinglePosition() {
   const [singlePosition, setSinglePosition] = useState(null);
@@ -24,12 +25,19 @@ export default function SinglePosition() {
       })
       .catch(console.error);
   }, [slug]);
+
+  let scrolledDown = false;
+  if (scrollPosition() > 100) {
+    scrolledDown = true;
+  }
   if (!singlePosition) return <div>Loading...</div>;
 
   return (
     <>
       <main className="Positions-single">
-        <div className="Positions-single-header-background"></div>
+        <div
+          className={` ${scrolledDown && "Positions-single-header-background"}`}
+        ></div>
 
         <article>
           <h1>{singlePosition.title}</h1>

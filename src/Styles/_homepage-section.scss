@@ -61,27 +61,31 @@
   }
 
   /* BigBackground ------------------------------- */
-  .section-BigBackground-image-overlay {
-    padding: 40vh 6vw 3em 6vw;
-    .section-BigBackground-text-content {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-around;
-    }
-  }
-  .section-BigBackground-image {
-    height: 100%;
-    width: 100%;
-    background-repeat: no-repeat;
-    background-color: #2e394b;
-    background-size: cover;
-    background-position: center;
+
+  .homepage-section-BigBackground-layers {
+    position: relative;
     .section-BigBackground-image-overlay {
-      height: 100%;
+      position: absolute;
+      top: 0;
+      padding: 40vh 6vw 3em 6vw;
+      height: 100vh;
       width: 100%;
       background-color: rgba(46, 57, 75, 0.65);
+
+      .section-BigBackground-text-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+      }
     }
   }
+  .section-BigBackground-video {
+    object-fit: cover;
+    // remove scrollbar
+    width: calc(100vw - 0.375em);
+    height: 100vh;
+  }
+
   /* OneBlock ------------------------------- */
   &.homepage-section-OneBlock {
     .section-OneBlock-text-content {

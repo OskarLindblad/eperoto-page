@@ -2,7 +2,7 @@
   .Positions-page-header-background {
     position: fixed;
     background-color: #2e394b;
-    height: 10em;
+    height: 8.3em;
     width: 100vw;
     top: 0;
     left: 0;
@@ -11,6 +11,7 @@
     border-bottom: 1px solid #fff;
   }
   padding: 12em 6vw 3em 6vw;
+  min-height: 100vh;
   .Positions-page-caption {
     font-family: "Roboto", sans-serif;
     margin: 0 0 0.5em 0;
@@ -89,6 +90,9 @@
 }
 
 @media screen and (max-width: 769px) {
+  .Positions-page-header-background {
+    height: 6.3em !important;
+  }
   article {
     .Positions-page-single-container {
       .Positions-page-single {
@@ -115,10 +119,11 @@
 /*--Single Positions-*/
 
 .Positions-single {
+  min-height: 100vh;
   .Positions-single-header-background {
     position: fixed;
     background-color: #2e394b;
-    height: 9.5em;
+    height: 8.3em;
     width: 100vw;
     top: 0;
     left: 0;
@@ -218,5 +223,13 @@
     position: absolute;
     right: 0;
     cursor: pointer;
+  }
+}
+
+@media screen and (max-width: 769px) {
+  .Positions-single {
+    .Positions-single-header-background {
+      height: 6.3em;
+    }
   }
 }

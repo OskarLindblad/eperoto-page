@@ -1,20 +1,26 @@
 import React from "react";
 import BlockContent from "@sanity/block-content-to-react";
 import ExpandingLine from "../components/ExpandingLine";
+import videoThumb from "../images/home_video_thumb.jpg";
+import video from "../images/home_video.mp4";
 
 export default function BigBackground(props) {
   const {
-    sectionData: { caption, content, image },
+    sectionData: { caption, content /*image*/ },
   } = props;
   return (
     <article className="homepage-section homepage-section-BigBackground ">
-      <div
-        src={image.asset.url}
-        className="section-BigBackground-image"
-        style={{
-          backgroundImage: `url(${image.asset.url})`,
-        }}
-      >
+      <div className=" homepage-section-BigBackground-layers ">
+        <video
+          playsInline
+          autoPlay
+          muted
+          loop
+          poster={videoThumb}
+          className="section-BigBackground-video"
+        >
+          <source src={video} type="video/mp4" />
+        </video>
         <div className="section-BigBackground-image-overlay">
           <h2>{caption}</h2>
           <ExpandingLine />
@@ -29,3 +35,10 @@ export default function BigBackground(props) {
     </article>
   );
 }
+
+/*
+        className="section-BigBackground-image"
+        style={{
+          backgroundImage: `url(${image.asset.url})`,
+        }}
+*/

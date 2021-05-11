@@ -2,7 +2,7 @@
 /*Scroll down for old CSS from the earlier project*/
 * {
   -webkit-box-sizing: border-box;
-  box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 html,
@@ -189,7 +189,7 @@ h1 {
 
 hr {
   -webkit-box-sizing: content-box;
-  box-sizing: content-box;
+          box-sizing: content-box;
   height: 0;
   overflow: visible;
 }
@@ -295,7 +295,7 @@ fieldset {
 
 legend {
   -webkit-box-sizing: border-box;
-  box-sizing: border-box;
+          box-sizing: border-box;
   color: inherit;
   display: table;
   max-width: 100%;
@@ -314,7 +314,7 @@ textarea {
 [type="checkbox"],
 [type="radio"] {
   -webkit-box-sizing: border-box;
-  box-sizing: border-box;
+          box-sizing: border-box;
   padding: 0;
 }
 
@@ -411,12 +411,12 @@ html {
 *:before,
 *:after {
   -webkit-box-sizing: inherit;
-  box-sizing: inherit;
+          box-sizing: inherit;
 }
 
 html {
   -webkit-box-sizing: border-box;
-  box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 html,
@@ -429,8 +429,7 @@ body {
   width: 100%;
   max-width: 100%;
   margin: 0;
-  font-family: Roboto, Arial, Verdana, Geneva, Helvetica, "Liberation Sans",
-    FreeSans, sans-serif;
+  font-family: Roboto, Arial, Verdana, Geneva, Helvetica, "Liberation Sans", FreeSans, sans-serif;
   font-size: 17px;
   font-weight: 400;
   color: #fff;
@@ -555,7 +554,7 @@ textarea:focus {
   border-bottom-style: solid;
   outline: none;
   -webkit-box-shadow: none;
-  box-shadow: none;
+          box-shadow: none;
 }
 
 input::-webkit-input-placeholder,
@@ -609,11 +608,11 @@ textarea::placeholder {
   padding: 12em 6vw 3em 6vw;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-  -ms-flex-direction: row;
-  flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
   -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .footer .footer-main {
@@ -640,8 +639,8 @@ textarea::placeholder {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 .footer .footer-socialMedia .socialMedia-icon {
@@ -658,8 +657,8 @@ textarea::placeholder {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   position: fixed;
   z-index: 1000;
   width: 100%;
@@ -670,7 +669,7 @@ textarea::placeholder {
 
 .header #logo {
   display: inline-block;
-  margin: -1.2em 0 0 0 !important;
+  margin: -0.8em 0 0 0 !important;
   font-size: 1em;
   line-height: 1em;
   display: block;
@@ -966,7 +965,9 @@ textarea::placeholder {
     height: 3.5em !important;
   }
   .header #logo {
-    margin: -0.7em 0 0 0 !important;
+    display: inline-block;
+    margin: -0.8em 0 0 0 !important;
+    font-size: 1em;
   }
   .header-background {
     height: 6.3em !important;
@@ -1011,11 +1012,11 @@ textarea::placeholder {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .homepage-section.homepage-section-blackText p,
@@ -1060,39 +1061,36 @@ textarea::placeholder {
   padding: 12em 6vw 10em 6vw;
 }
 
-.homepage-section .section-BigBackground-image-overlay {
-  padding: 40vh 6vw 3em 6vw;
+.homepage-section .homepage-section-BigBackground-layers {
+  position: relative;
 }
 
-.homepage-section
-  .section-BigBackground-image-overlay
-  .section-BigBackground-text-content {
+.homepage-section .homepage-section-BigBackground-layers .section-BigBackground-image-overlay {
+  position: absolute;
+  top: 0;
+  padding: 40vh 6vw 3em 6vw;
+  height: 100vh;
+  width: 100%;
+  background-color: rgba(46, 57, 75, 0.65);
+}
+
+.homepage-section .homepage-section-BigBackground-layers .section-BigBackground-image-overlay .section-BigBackground-text-content {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -ms-flex-pack: distribute;
-  justify-content: space-around;
+      justify-content: space-around;
 }
 
-.homepage-section .section-BigBackground-image {
-  height: 100%;
-  width: 100%;
-  background-repeat: no-repeat;
-  background-color: #2e394b;
-  background-size: cover;
-  background-position: center;
-}
-
-.homepage-section
-  .section-BigBackground-image
-  .section-BigBackground-image-overlay {
-  height: 100%;
-  width: 100%;
-  background-color: rgba(46, 57, 75, 0.65);
+.homepage-section .section-BigBackground-video {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: calc(100vw - 0.375em);
+  height: 100vh;
 }
 
 .homepage-section.homepage-section-OneBlock .section-OneBlock-text-content {
@@ -1101,32 +1099,28 @@ textarea::placeholder {
   display: flex;
   width: 100%;
   -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .homepage-section.homepage-section-OneBlock .section-OneBlock-text-content p {
   width: 45%;
 }
 
-.homepage-section.homepage-section-SepareBlocks
-  .section-SepareBlocks-text-content {
+.homepage-section.homepage-section-SepareBlocks .section-SepareBlocks-text-content {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-  -ms-flex-direction: row;
-  flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
   -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
-.homepage-section.homepage-section-SepareBlocks
-  .section-SepareBlocks-text-content
-  .section-SepareBlocks-text-block
-  p:first-child::after {
+.homepage-section.homepage-section-SepareBlocks .section-SepareBlocks-text-content .section-SepareBlocks-text-block p:first-child::after {
   content: "";
   display: inline-block;
   width: 100%;
@@ -1134,10 +1128,7 @@ textarea::placeholder {
   border-bottom: 1px solid #ffd778;
 }
 
-.homepage-section.homepage-section-SepareBlocks
-  .section-SepareBlocks-text-content
-  .section-SepareBlocks-text-block
-  strong {
+.homepage-section.homepage-section-SepareBlocks .section-SepareBlocks-text-content .section-SepareBlocks-text-block strong {
   font-family: "Montserrat", sans-serif;
   font-size: 2.3em;
   font-weight: 600;
@@ -1157,32 +1148,26 @@ textarea::placeholder {
   width: 30%;
 }
 
-.homepage-section.homepage-section-Collaborators
-  .section-Collaborators-container {
+.homepage-section.homepage-section-Collaborators .section-Collaborators-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-  -ms-flex-direction: row;
-  flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
   -ms-flex-pack: distribute;
-  justify-content: space-around;
+      justify-content: space-around;
   -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
-.homepage-section.homepage-section-Collaborators
-  .section-Collaborators-container
-  .section-Collaborators-collaborator {
+.homepage-section.homepage-section-Collaborators .section-Collaborators-container .section-Collaborators-collaborator {
   width: 20%;
   margin: auto 1em;
 }
 
-.homepage-section.homepage-section-Collaborators
-  .section-Collaborators-container
-  .section-Collaborators-collaborator
-  img {
+.homepage-section.homepage-section-Collaborators .section-Collaborators-container .section-Collaborators-collaborator img {
   width: 100%;
   max-height: 4em;
 }
@@ -1202,10 +1187,10 @@ textarea::placeholder {
   display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-  -ms-flex-direction: row;
-  flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
   -ms-flex-wrap: nowrap;
-  flex-wrap: nowrap;
+      flex-wrap: nowrap;
   padding: 4em 0;
   position: relative;
 }
@@ -1213,7 +1198,7 @@ textarea::placeholder {
 .homepage-section.homepage-section-News .homepage-section-News-single h3 {
   font-family: "Montserrat", sans-serif;
   -ms-flex-negative: 0;
-  flex-shrink: 0;
+      flex-shrink: 0;
   width: 40%;
   margin: 0 1.5em 0 0;
   font-size: 1.647059em;
@@ -1222,8 +1207,8 @@ textarea::placeholder {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   height: auto;
 }
 
@@ -1245,7 +1230,7 @@ textarea::placeholder {
   right: 0;
   top: 50%;
   -webkit-transform: translateY(-50%);
-  transform: translateY(-50%);
+          transform: translateY(-50%);
 }
 
 .homepage-section.homepage-section-WhyNotYou p {
@@ -1257,28 +1242,25 @@ textarea::placeholder {
   padding: 0 0 0.5em 0;
 }
 
-.homepage-section.homepage-section-WhyNotYou
-  .homepage-section-WhyNotYou-single {
+.homepage-section.homepage-section-WhyNotYou .homepage-section-WhyNotYou-single {
   border-bottom: 1px solid #ffd778;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-  -ms-flex-direction: row;
-  flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
   -ms-flex-wrap: nowrap;
-  flex-wrap: nowrap;
+      flex-wrap: nowrap;
   padding: 4em 0;
   position: relative;
 }
 
-.homepage-section.homepage-section-WhyNotYou
-  .homepage-section-WhyNotYou-single
-  h3 {
+.homepage-section.homepage-section-WhyNotYou .homepage-section-WhyNotYou-single h3 {
   font-family: "Montserrat", sans-serif;
   -ms-flex-negative: 0;
-  flex-shrink: 0;
+      flex-shrink: 0;
   width: 40%;
   margin: 0 1.5em 0 0;
   font-size: 1.647059em;
@@ -1287,14 +1269,12 @@ textarea::placeholder {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   height: auto;
 }
 
-.homepage-section.homepage-section-WhyNotYou
-  .homepage-section-WhyNotYou-single
-  p {
+.homepage-section.homepage-section-WhyNotYou .homepage-section-WhyNotYou-single p {
   max-width: 60%;
   margin: 0 4.5em 0 0;
   display: -webkit-box;
@@ -1303,8 +1283,7 @@ textarea::placeholder {
   overflow: hidden;
 }
 
-.homepage-section.homepage-section-WhyNotYou
-  .homepage-section-WhyNotYou-single::after {
+.homepage-section.homepage-section-WhyNotYou .homepage-section-WhyNotYou-single::after {
   content: "\2192";
   font-family: icons;
   font-size: 3em;
@@ -1313,7 +1292,7 @@ textarea::placeholder {
   right: 0;
   top: 50%;
   -webkit-transform: translateY(-50%);
-  transform: translateY(-50%);
+          transform: translateY(-50%);
 }
 
 @media screen and (max-width: 1025px) {
@@ -1331,16 +1310,14 @@ textarea::placeholder {
   .homepage-section-OneBlock .section-OneBlock-text-content {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
   }
   .homepage-section-OneBlock .section-OneBlock-text-content p {
     width: 100% !important;
   }
   /* Collaborators ------------------------------- */
-  .homepage-section-Collaborators
-    .section-Collaborators-container
-    .section-Collaborators-collaborator {
+  .homepage-section-Collaborators .section-Collaborators-container .section-Collaborators-collaborator {
     width: 40% !important;
   }
   /* SepareBlocks ------------------------------- */
@@ -1350,35 +1327,26 @@ textarea::placeholder {
     display: flex;
     -webkit-box-orient: vertical !important;
     -webkit-box-direction: normal !important;
-    -ms-flex-direction: column !important;
-    flex-direction: column !important;
+        -ms-flex-direction: column !important;
+            flex-direction: column !important;
     -webkit-box-pack: start;
-    -ms-flex-pack: start;
-    justify-content: flex-start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
   }
-  .homepage-section-SepareBlocks
-    .section-SepareBlocks-text-content
-    .section-SepareBlocks-text-block
-    strong {
+  .homepage-section-SepareBlocks .section-SepareBlocks-text-content .section-SepareBlocks-text-block strong {
     font-size: 1.3em !important;
   }
-  .homepage-section-SepareBlocks
-    .section-SepareBlocks-text-content
-    .section-SepareBlocks-blocks-1,
-  .homepage-section-SepareBlocks
-    .section-SepareBlocks-text-content
-    .section-SepareBlocks-blocks-2,
-  .homepage-section-SepareBlocks
-    .section-SepareBlocks-text-content
-    .section-SepareBlocks-blocks-3 {
+  .homepage-section-SepareBlocks .section-SepareBlocks-text-content .section-SepareBlocks-blocks-1,
+  .homepage-section-SepareBlocks .section-SepareBlocks-text-content .section-SepareBlocks-blocks-2,
+  .homepage-section-SepareBlocks .section-SepareBlocks-text-content .section-SepareBlocks-blocks-3 {
     width: 100% !important;
   }
   /* News ------------------------------- */
   .homepage-section-News .homepage-section-News-single {
     -webkit-box-orient: vertical !important;
     -webkit-box-direction: normal !important;
-    -ms-flex-direction: column !important;
-    flex-direction: column !important;
+        -ms-flex-direction: column !important;
+            flex-direction: column !important;
   }
   .homepage-section-News .homepage-section-News-single h3 {
     width: 100% !important;
@@ -1399,8 +1367,8 @@ textarea::placeholder {
   .homepage-section-WhyNotYou .homepage-section-WhyNotYou-single {
     -webkit-box-orient: vertical !important;
     -webkit-box-direction: normal !important;
-    -ms-flex-direction: column !important;
-    flex-direction: column !important;
+        -ms-flex-direction: column !important;
+            flex-direction: column !important;
   }
   .homepage-section-WhyNotYou .homepage-section-WhyNotYou-single h3 {
     width: 100% !important;
@@ -1433,11 +1401,11 @@ textarea::placeholder {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   margin: 0 4vw;
 }
 
@@ -1459,16 +1427,16 @@ textarea::placeholder {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   height: auto;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 .slider .slider-image img {
@@ -1486,9 +1454,9 @@ textarea::placeholder {
   padding: 1em;
   cursor: pointer;
   -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
   z-index: 0;
 }
 
@@ -1510,9 +1478,9 @@ textarea::placeholder {
   padding: 1em;
   cursor: pointer;
   -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
   text-decoration: none;
   background-color: #2e394b;
   padding: 18px 0;
@@ -1523,8 +1491,8 @@ textarea::placeholder {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   margin: 10px 0 0 0;
   -webkit-transition: color 0.7s ease-in-out;
   transition: color 0.7s ease-in-out;
@@ -1542,22 +1510,22 @@ textarea::placeholder {
 .slider .slide {
   opacity: 0;
   -webkit-transition-duration: 1s ease;
-  transition-duration: 1s ease;
+          transition-duration: 1s ease;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-  -ms-flex-direction: row;
-  flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
 }
 
 .slider .slide.active {
   opacity: 1;
   -webkit-transition-duration: 1s;
-  transition-duration: 1s;
+          transition-duration: 1s;
   -webkit-transform: scale(1.08);
-  transform: scale(1.08);
+          transform: scale(1.08);
 }
 
 @media screen and (max-width: 1025px) {
@@ -1586,9 +1554,9 @@ textarea::placeholder {
     padding: 1em;
     cursor: pointer;
     -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
   }
   .slider .slider-contact-btn {
     width: 200px;
@@ -1599,8 +1567,8 @@ textarea::placeholder {
   .slider .slide {
     -webkit-box-orient: vertical;
     -webkit-box-direction: reverse;
-    -ms-flex-direction: column-reverse;
-    flex-direction: column-reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
   }
 }
 
@@ -1611,7 +1579,7 @@ textarea::placeholder {
 .News-page .News-page-header-background {
   position: fixed;
   background-color: #2e394b;
-  height: 9.5em;
+  height: 8.3em;
   width: 100vw;
   top: 0;
   left: 0;
@@ -1654,10 +1622,10 @@ textarea::placeholder {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -ms-flex-wrap: nowrap;
-  flex-wrap: nowrap;
+      flex-wrap: nowrap;
   padding: 4em 0;
   position: relative;
 }
@@ -1665,7 +1633,7 @@ textarea::placeholder {
 .News-page article .News-page-single-container .News-page-single h3 {
   font-family: "Montserrat", sans-serif;
   -ms-flex-negative: 0;
-  flex-shrink: 0;
+      flex-shrink: 0;
   width: 100%;
   margin: 0 1.5em 0 0;
   font-size: 1.647059em;
@@ -1674,8 +1642,8 @@ textarea::placeholder {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   height: auto;
 }
 
@@ -1707,7 +1675,7 @@ textarea::placeholder {
   right: 0;
   top: 50%;
   -webkit-transform: translateY(-50%);
-  transform: translateY(-50%);
+          transform: translateY(-50%);
   pointer-events: none;
 }
 
@@ -1747,7 +1715,7 @@ textarea::placeholder {
 .News-single .News-single-header-background {
   position: fixed;
   background-color: #2e394b;
-  height: 10em;
+  height: 8.3em;
   width: 100vw;
   top: 0;
   left: 0;
@@ -1797,8 +1765,8 @@ textarea::placeholder {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   margin-bottom: 1em;
 }
 
@@ -1810,7 +1778,7 @@ textarea::placeholder {
 .News-single h3 {
   font-family: "Montserrat", sans-serif;
   -ms-flex-negative: 0;
-  flex-shrink: 0;
+      flex-shrink: 0;
   margin: 0 1.5em 10px 0;
   font-size: 1.647059em;
   line-height: 1.357142em;
@@ -1818,8 +1786,8 @@ textarea::placeholder {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   height: auto;
 }
 
@@ -1837,9 +1805,9 @@ textarea::placeholder {
   padding: 1em;
   cursor: pointer;
   -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
   text-decoration: none;
   background-color: #2e394b;
   padding: 18px 0;
@@ -1850,8 +1818,8 @@ textarea::placeholder {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   margin: 10px 0 0 0;
   -webkit-transition: color 0.7s ease-in-out;
   transition: color 0.7s ease-in-out;
@@ -1889,16 +1857,20 @@ textarea::placeholder {
     height: 70px !important;
     top: auto !important;
   }
+  .News-single .News-single-header-background {
+    height: 6.3em !important;
+  }
 }
 
 .Positions-page {
   padding: 12em 6vw 3em 6vw;
+  min-height: 100vh;
 }
 
 .Positions-page .Positions-page-header-background {
   position: fixed;
   background-color: #2e394b;
-  height: 10em;
+  height: 8.3em;
   width: 100vw;
   top: 0;
   left: 0;
@@ -1934,32 +1906,25 @@ textarea::placeholder {
   margin: 0;
 }
 
-.Positions-page
-  article
-  .Positions-page-single-container
-  .Positions-page-single {
+.Positions-page article .Positions-page-single-container .Positions-page-single {
   border-bottom: 1px solid #fff;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -ms-flex-wrap: nowrap;
-  flex-wrap: nowrap;
+      flex-wrap: nowrap;
   padding: 4em 0;
   position: relative;
 }
 
-.Positions-page
-  article
-  .Positions-page-single-container
-  .Positions-page-single
-  h3 {
+.Positions-page article .Positions-page-single-container .Positions-page-single h3 {
   font-family: "Montserrat", sans-serif;
   -ms-flex-negative: 0;
-  flex-shrink: 0;
+      flex-shrink: 0;
   width: 100%;
   margin: 0 1.5em 10px 0;
   font-size: 1.647059em;
@@ -1968,16 +1933,12 @@ textarea::placeholder {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   height: auto;
 }
 
-.Positions-page
-  article
-  .Positions-page-single-container
-  .Positions-page-single
-  p {
+.Positions-page article .Positions-page-single-container .Positions-page-single p {
   max-width: 80%;
   margin: 0 4.5em 0 0;
   display: -webkit-box;
@@ -1986,10 +1947,7 @@ textarea::placeholder {
   overflow: hidden;
 }
 
-.Positions-page
-  article
-  .Positions-page-single-container
-  .Positions-page-single::after {
+.Positions-page article .Positions-page-single-container .Positions-page-single::after {
   content: "\2192";
   font-family: icons;
   font-size: 3em;
@@ -1998,7 +1956,7 @@ textarea::placeholder {
   right: 0;
   top: 50%;
   -webkit-transform: translateY(-50%);
-  transform: translateY(-50%);
+          transform: translateY(-50%);
   pointer-events: none;
 }
 
@@ -2012,6 +1970,9 @@ textarea::placeholder {
 }
 
 @media screen and (max-width: 769px) {
+  .Positions-page-header-background {
+    height: 6.3em !important;
+  }
   article .Positions-page-single-container .Positions-page-single p {
     max-width: 100% !important;
     margin: 0 0 0 0 !important;
@@ -2030,13 +1991,14 @@ textarea::placeholder {
 /*Single ---*/
 /*--Single Positions-*/
 .Positions-single {
+  min-height: 100vh;
   padding: 12em 6vw 3em 6vw;
 }
 
 .Positions-single .Positions-single-header-background {
   position: fixed;
   background-color: #2e394b;
-  height: 9.5em;
+  height: 8.3em;
   width: 100vw;
   top: 0;
   left: 0;
@@ -2086,8 +2048,8 @@ textarea::placeholder {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   margin-bottom: 1em;
 }
 
@@ -2099,7 +2061,7 @@ textarea::placeholder {
 .Positions-single h3 {
   font-family: "Montserrat", sans-serif;
   -ms-flex-negative: 0;
-  flex-shrink: 0;
+      flex-shrink: 0;
   margin: 0 1.5em 10px 0;
   font-size: 1.647059em;
   line-height: 1.357142em;
@@ -2107,8 +2069,8 @@ textarea::placeholder {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   height: auto;
 }
 
@@ -2126,9 +2088,9 @@ textarea::placeholder {
   padding: 1em;
   cursor: pointer;
   -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
   text-decoration: none;
   background-color: #2e394b;
   padding: 18px 0;
@@ -2139,8 +2101,8 @@ textarea::placeholder {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   margin: 10px 0 0 0;
   -webkit-transition: color 0.7s ease-in-out;
   transition: color 0.7s ease-in-out;
@@ -2164,15 +2126,108 @@ textarea::placeholder {
   cursor: pointer;
 }
 
+@media screen and (max-width: 769px) {
+  .Positions-single .Positions-single-header-background {
+    height: 6.3em;
+  }
+}
+
+.Contacts-page {
+  padding: 12em 6vw 3em 6vw;
+  min-height: 100vh;
+}
+
+.Contacts-page .Contacts-page-header-background {
+  position: fixed;
+  background-color: #2e394b;
+  height: 8.3em;
+  width: 100vw;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  border-bottom: 1px solid #fff;
+}
+
+.Contacts-page .Contacts-page-caption {
+  font-family: "Roboto", sans-serif;
+  margin: 0 0 1.5em 0;
+  text-transform: uppercase;
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 1.882353em;
+  color: #ffd778;
+  border-bottom: 1px solid #fff;
+}
+
+.Contacts-page .Contacts-page-field {
+  margin: 0 0 1.5em 0;
+}
+
+.Contacts-page .Contacts-page-field-Message {
+  height: 15vh;
+}
+
+.Contacts-page .Contacts-page-field-Message textarea {
+  height: 100%;
+  max-height: 100%;
+}
+
+.Contacts-page .Contacts-page-error-msg {
+  font-weight: 400;
+  font-size: 13px;
+}
+
+.Contacts-page .Contacts-page-btn {
+  border: solid #ffffff 1px;
+  display: inline-block;
+  padding: 1em;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  text-decoration: none;
+  background-color: #2e394b;
+  padding: 18px 0;
+  cursor: pointer;
+  color: #fff;
+  line-height: 1;
+  width: 200px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 70px 0 0 0;
+  -webkit-transition: background-color 0.7s ease-in-out, color 0.7s ease-in-out;
+  transition: background-color 0.7s ease-in-out, color 0.7s ease-in-out;
+}
+
+.Contacts-page .Contacts-page-btn :first-child {
+  margin: auto;
+}
+
+.Contacts-page .Contacts-page-btn:hover {
+  background-color: #fff !important;
+  color: #2e394b;
+}
+
+@media screen and (max-width: 769px) {
+  .Contacts-page .Contacts-page-header-background {
+    height: 6.3em !important;
+  }
+}
+
 * {
   -webkit-box-sizing: border-box;
-  box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 *:before,
 *:after {
   -webkit-box-sizing: border-box;
-  box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 footer {
