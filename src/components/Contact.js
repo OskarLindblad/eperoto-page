@@ -71,6 +71,7 @@ export default function Contact() {
         company: company,
         message: message,
       };
+      messageObj = JSON.parse(messageObj);
       console.log(messageObj);
     }
   };

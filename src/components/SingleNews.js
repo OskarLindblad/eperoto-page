@@ -6,6 +6,8 @@ import Footer from "./Footer";
 import { Link } from "react-router-dom";
 import scrollPosition from "../modules/scrollPosition";
 
+import Loading from "../components/Loading";
+
 export default function SingleNews() {
   const [singleNews, setSingleNews] = useState(null);
   const { slug } = useParams();
@@ -39,7 +41,7 @@ export default function SingleNews() {
   if (scrollPosition() > 100) {
     scrolledDown = true;
   }
-  if (!singleNews) return <div>Loading...</div>;
+  if (!singleNews) return <Loading />;
 
   return (
     <>

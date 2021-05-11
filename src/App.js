@@ -1,6 +1,5 @@
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Home from "./components/Home";
-import About from "./components/About";
 import SingleNews from "./components/SingleNews";
 import News from "./components/News";
 import SinglePosition from "./components/SinglePosition";
@@ -15,7 +14,6 @@ function App() {
       <main>
         <Switch>
           <Route component={Home} path="/" exact />
-          <Route component={About} path="/about" />
           <Route component={SingleNews} path="/news/:slug" />
           <Route component={News} path="/news" />
           <Route component={SinglePosition} path="/positions/:slug" />

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { SocialIcon } from "react-social-icons";
 import BlockContent from "@sanity/block-content-to-react";
 import sanityClient from "../client.js";
+import Loading from "../components/Loading";
 
 export default function Footer() {
   const [footer, setFooter] = useState(null);
@@ -21,7 +22,7 @@ export default function Footer() {
       .catch(console.error);
   }, []);
 
-  if (!footer) return <div>Loading...</div>;
+  if (!footer) return <Loading />;
 
   return (
     <footer className="footer ">

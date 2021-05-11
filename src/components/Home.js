@@ -4,6 +4,7 @@ import { FullPage, Slide } from "react-full-page";
 import useWindowDimensions from "../modules/useWindowDimensions";
 
 import Footer from "../components/Footer";
+import Loading from "../components/Loading";
 
 import BigBackground from "../sections/BigBackground";
 import Collaborators from "../sections/Collaborators";
@@ -43,7 +44,9 @@ export default function Home() {
   let sections;
   if (homePageSections) {
     sections = homePageSections.sort((a, b) => (a.order > b.order ? 1 : -1));
-  } // TODO else { dummy array for nicer load?}
+  } else {
+    <Loading />;
+  }
   const createSection = (section, index) => {
     if (section.sectionType === "bigBackground") {
       return <BigBackground sectionData={section} index={index} />;

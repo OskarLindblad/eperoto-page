@@ -6,7 +6,7 @@ import video from "../images/home_video.mp4";
 
 export default function BigBackground(props) {
   const {
-    sectionData: { caption, content /*image*/ },
+    sectionData: { caption, content },
   } = props;
   return (
     <article className="homepage-section homepage-section-BigBackground ">
