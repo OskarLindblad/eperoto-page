@@ -4,6 +4,16 @@
   }
 }
 
+.header-background {
+  position: fixed;
+  height: 8.3em;
+  width: 100vw;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  transition: background-color 0.2s ease-in-out;
+}
+
 .homepage-section {
   .homepage-section-container {
     height: 100%;
@@ -47,7 +57,7 @@
     line-height: 1.882353em;
   }
   &.homepage-section-padding {
-    padding: 12em 6vw 3em 6vw;
+    padding: 12em 6vw 10em 6vw;
   }
 
   /* BigBackground ------------------------------- */
@@ -234,6 +244,12 @@
   }
 }
 
+@media screen and (max-width: 1025px) {
+  .homepage-section.homepage-section-padding {
+    padding: 12em 6vw 3em 6vw !important;
+  }
+}
+
 @media screen and (max-width: 769px) {
   .homepage-section {
     h2 {
@@ -246,6 +262,9 @@
   &.homepage-section-OneBlock {
     .section-OneBlock-text-content {
       flex-direction: column;
+      p {
+        width: 100% !important;
+      }
     }
   }
   /* Collaborators ------------------------------- */

@@ -3,6 +3,8 @@ import sanityClient from "../client.js";
 import { Link } from "react-router-dom";
 import BlockContent from "@sanity/block-content-to-react";
 import Footer from "./Footer";
+import scrollPosition from "../modules/scrollPosition";
+
 export default function News() {
   const [newsData, setNews] = useState(null);
 
@@ -27,10 +29,18 @@ export default function News() {
       .catch(console.error);
   }, []);
 
+  let scrolledDown = false;
+  if (scrollPosition() > 100) {
+    scrolledDown = true;
+  }
+
   return (
     <>
       <main className="News-page">
-        <div className="News-page-header-background"></div>
+        <div
+          className={` ${scrolledDown && "News-page-header-background"}`}
+        ></div>
+
         <h4 className="News-page-caption">News</h4>
 
         {newsData &&

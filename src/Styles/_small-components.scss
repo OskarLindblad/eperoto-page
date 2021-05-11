@@ -46,16 +46,15 @@
     padding: 1em;
     cursor: pointer;
     user-select: none;
+    z-index: 0;
   }
   .slider-right-arrow {
     right: 32px;
-    z-index: 10;
     transform: rotate(-45deg);
     -webkit-transform: rotate(-45deg);
   }
   .slider-left-arrow {
     left: 32px;
-    z-index: 10;
     transform: rotate(135deg);
     -webkit-transform: rotate(135deg);
   }

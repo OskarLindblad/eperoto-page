@@ -2,12 +2,11 @@
   .News-page-header-background {
     position: fixed;
     background-color: #2e394b;
-    height: 10em;
+    height: 9.5em;
     width: 100vw;
     top: 0;
     left: 0;
     z-index: 1;
-
     border-bottom: 1px solid #fff;
   }
   padding: 12em 6vw 3em 6vw;
@@ -98,6 +97,9 @@
 }
 
 @media screen and (max-width: 769px) {
+  .News-page-header-background {
+    height: 6.3em !important;
+  }
   article {
     .News-page-single-container {
       .News-page-single {

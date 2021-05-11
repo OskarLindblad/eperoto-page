@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import sanityClient from "../client.js";
 import { FullPage, Slide } from "react-full-page";
+import useWindowDimensions from "../modules/useWindowDimensions";
 
 import Footer from "../components/Footer";
 
@@ -14,6 +15,7 @@ import WhyNotYou from "../sections/WhyNotYou";
 
 export default function Home() {
   const [homePageSections, setHomePageSections] = useState(null);
+  const [currentBackGround, setCurrentBackGround] = useState("rgba(0,0,0,0)");
 
   useEffect(() => {
     sanityClient
@@ -59,20 +61,79 @@ export default function Home() {
       return <TeamCarousel sectionData={section} index={index} />;
     }
   };
-  //TODO: MOBILE if(width incase <Slide> and replace with div)
-  //TODO: MOBILE ALso kill when weird height
+  const dimensions = useWindowDimensions();
+
+  let turnOffSlide = false;
+  if (dimensions.width < 769) {
+    turnOffSlide = true;
+  }
+
+  const [scrollPosition, setScrollPosition] = useState(0);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  const handleScroll = () => {
+    const position = window.pageYOffset;
+    setScrollPosition(position);
+    checkBackGround();
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [handleScroll]);
+
+  const checkBackGround = () => {
+    const currentSection = parseInt((scrollPosition + 1) / window.innerHeight);
+    // If width is lower than 769px change to one color(except on bigBackground)
+    if (dimensions.width < 769) {
+      if (scrollPosition < window.innerHeight) {
+        setCurrentBackGround("rgba(0,0,0,0)");
+      } else {
+        setCurrentBackGround("#2e394b");
+      }
+    } else {
+      if (currentSection >= homePageSections.length) {
+        setCurrentBackGround("#242f41");
+      } else {
+        if (homePageSections[currentSection].backgroundColor === "#ffd778") {
+          setCurrentBackGround("#2e394b");
+        } else {
+          setCurrentBackGround(
+            homePageSections[currentSection].backgroundColor
+          );
+        }
+      }
+    }
+  };
 
   return (
     <main>
-      <FullPage controls>
-        {sections &&
-          sections.map((section, index) => (
-            <Slide key={index}>{createSection(section, index)}</Slide>
-          ))}
-        <Slide>
-          <Footer />
-        </Slide>
-      </FullPage>
+      <div
+        className="header-background"
+        style={{ background: currentBackGround }}
+      ></div>
+      {turnOffSlide ? (
+        <div className="no-slide">
+          {sections &&
+            sections.map((section, index) => (
+              <div key={index}>{createSection(section, index)}</div>
+            ))}
+          <div className="no-slide">
+            <Footer />
+          </div>
+        </div>
+      ) : (
+        <FullPage controls>
+          {sections &&
+            sections.map((section, index) => (
+              <Slide key={index}>{createSection(section, index)}</Slide>
+            ))}
+          <Slide>
+            <Footer />
+          </Slide>
+        </FullPage>
+      )}
     </main>
   );
 }

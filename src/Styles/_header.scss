@@ -7,18 +7,24 @@
   padding: 3em 6vw 3em 6vw;
   #logo {
     display: inline-block;
-    margin: 0;
+    margin: -1.2em 0 0 0 !important;
     font-size: 1em;
     line-height: 1em;
     display: block;
     width: auto;
-    height: 4.5em; //6em
+    height: 6em;
     position: absolute;
     z-index: 1001;
     will-change: height;
     -webkit-transition: height 0.35s ease-in-out;
     -o-transition: height 0.35s ease-in-out;
     transition: height 0.35s ease-in-out;
+    &.logo-scrolledDown {
+      height: 4.5em !important;
+      -webkit-transition: height 0.35s ease-in-out;
+      -o-transition: height 0.35s ease-in-out;
+      transition: height 0.35s ease-in-out;
+    }
   }
 
   /** MENU */
@@ -276,23 +282,19 @@
 }
 
 @media (max-width: 768px) {
-  #logo,
-  .nav-up #logo,
-  .menu_close .nav-up #logo {
-    max-width: 25vw;
-    width: auto;
-    height: auto !important;
+  .header {
+    padding: 2em 6vw 2em 6vw;
+    #logo.logo-scrolledDown {
+      height: 3.5em !important;
+    }
   }
-  #nav-menu {
-    margin-right: 1em;
+  .header-background {
+    height: 6.3em !important;
   }
+}
+
+@media (max-width: 480px) {
   #nav {
-    padding-top: 6em;
-  }
-  #nav li {
-    margin: 2em 0;
-  }
-  #nav a {
-    font-size: 24px !important;
+    padding: 20vh 6vw 3em 6vw !important;
   }
 }

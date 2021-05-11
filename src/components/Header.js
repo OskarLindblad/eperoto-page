@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import eperotoLogo from "../images/Eperoto-Logo-1.png";
+import scrollPosition from "../modules/scrollPosition";
 
 export default function NavBar() {
   const [menuToggle, setMenuToggle] = useState(false);
@@ -12,10 +13,22 @@ export default function NavBar() {
   } else {
     document.querySelector("html").style.overflow = "auto";
   }
+
+  let scrolledDown = false;
+  if (scrollPosition() > 50) {
+    scrolledDown = true;
+  }
+
   return (
     <header className="header">
       <NavLink to="/" exact>
-        <img className="logo" id="logo" src={eperotoLogo} alt="Eperoto" />
+        <img
+          className={`logo ${scrolledDown && "logo-scrolledDown"}`}
+          id="logo"
+          src={eperotoLogo}
+          alt="Eperoto"
+          onClick={() => setMenuToggle(false)}
+        />
       </NavLink>
       <div
         id="nav-menu"
