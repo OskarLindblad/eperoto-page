@@ -261,6 +261,15 @@
       font-family: "Montserrat", sans-serif;
       font-size: 2em;
     }
+    &.homepage-section-padding {
+      padding: 3em 6vw 3em 6vw !important;
+      height: fit-content !important;
+    }
+  }
+  .homepage-section-BigBackground-layers {
+    .section-BigBackground-image-overlay {
+      padding: 25vh 6vw 3em 6vw !important;
+    }
   }
   /* OneBlock ------------------------------- */
 
@@ -341,6 +350,19 @@
       &::after {
         top: 90% !important;
       }
+    }
+  }
+}
+
+@media screen and (max-width: 395px) {
+  .homepage-section-Collaborators .section-Collaborators-container {
+    &:last-child {
+      border-bottom: thin #fff solid;
+      padding-bottom: 1em;
+    }
+    .section-Collaborators-collaborator {
+      width: 70% !important;
+      margin: 0.5em auto !important;
     }
   }
 }

@@ -46,7 +46,7 @@
     padding: 1em;
     cursor: pointer;
     user-select: none;
-    z-index: 0;
+    z-index: 1;
   }
   .slider-right-arrow {
     right: 32px;
@@ -79,10 +79,14 @@
     transition: color 0.7s ease-in-out;
     :first-child {
       margin: auto;
+      text-align: center;
     }
     &:hover {
       background-color: #fff;
       color: rgb(46, 57, 75);
+    }
+    &.slider-contact-btn-smallscreen {
+      display: none;
     }
   }
 
@@ -104,7 +108,7 @@
   .slider {
     .slider-right-arrow {
       position: absolute;
-      top: 110%;
+      top: 100%;
       border: solid #ffffff;
       border-width: 0 3px 3px 0;
       padding: 1em;
@@ -117,11 +121,16 @@
 
 @media screen and (max-width: 769px) {
   .slider {
+    height: fit-content;
     .slider-image {
+      margin-bottom: 1em;
       img {
         max-height: 40vh;
         width: 200px;
       }
+    }
+    .slider-presentation {
+      margin-right: 0;
     }
     .slider-left-arrow,
     .slider-right-arrow {
@@ -134,11 +143,23 @@
       cursor: pointer;
       user-select: none;
     }
+    .slider-left-arrow {
+      left: -10px;
+    }
+    .slider-right-arrow {
+      right: -10px;
+    }
 
     .slider-contact-btn {
       width: 200px;
       :first-child {
         margin: auto;
+      }
+      &.slider-contact-btn-smallscreen {
+        display: block;
+      }
+      &.slider-contact-btn-largescreen {
+        display: none;
       }
     }
 

@@ -41,6 +41,12 @@ const Carusel = ({ slideData, caption }) => {
                     projectId="1ta3690e"
                     dataset="production"
                   />
+                  <a
+                    className="slider-contact-btn slider-contact-btn-smallscreen"
+                    href={`mailto:${slide.mail}`}
+                  >
+                    <div>Write to {slide.firstName}</div>
+                  </a>
                 </div>
                 <div className="slider-image">
                   <img
@@ -49,7 +55,7 @@ const Carusel = ({ slideData, caption }) => {
                   />
                   {/*TODO before after / current*/}
                   <a
-                    className="slider-contact-btn"
+                    className="slider-contact-btn slider-contact-btn-largescreen"
                     href={`mailto:${slide.mail}`}
                   >
                     <div>Write to {slide.firstName}</div>
