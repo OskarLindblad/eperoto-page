@@ -990,7 +990,7 @@ textarea::placeholder {
   width: 100vw;
   top: 0;
   left: 0;
-  z-index: 1;
+  z-index: 2;
   -webkit-transition: background-color 0.2s ease-in-out;
   transition: background-color 0.2s ease-in-out;
 }
@@ -1530,13 +1530,15 @@ textarea::placeholder {
 }
 
 @media screen and (max-width: 1025px) {
-  .slider .slider-left-arrow,
   .slider .slider-right-arrow {
     position: absolute;
     top: 110%;
     border: solid #ffffff;
     border-width: 0 3px 3px 0;
     padding: 1em;
+  }
+  .slider .slider-left-arrow {
+    display: none;
   }
 }
 
@@ -1599,7 +1601,7 @@ textarea::placeholder {
   width: 100vw;
   top: 0;
   left: 0;
-  z-index: 1;
+  z-index: 2;
   border-bottom: 1px solid #fff;
 }
 
@@ -2018,7 +2020,7 @@ textarea::placeholder {
   width: 100vw;
   top: 0;
   left: 0;
-  z-index: 1;
+  z-index: 2;
   border-bottom: 1px solid #fff;
 }
 
@@ -2160,7 +2162,7 @@ textarea::placeholder {
   width: 100vw;
   top: 0;
   left: 0;
-  z-index: 1;
+  z-index: 2;
   border-bottom: 1px solid #fff;
 }
 

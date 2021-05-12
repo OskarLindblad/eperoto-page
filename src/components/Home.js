@@ -42,10 +42,9 @@ export default function Home() {
   }, []);
 
   let sections;
+
   if (homePageSections) {
     sections = homePageSections.sort((a, b) => (a.order > b.order ? 1 : -1));
-  } else {
-    <Loading />;
   }
   const createSection = (section, index) => {
     if (section.sectionType === "bigBackground") {
@@ -68,6 +67,9 @@ export default function Home() {
 
   let turnOffSlide = false;
   if (dimensions.width < 769) {
+    turnOffSlide = true;
+  }
+  if (dimensions.height < 800) {
     turnOffSlide = true;
   }
 
@@ -96,15 +98,17 @@ export default function Home() {
         setCurrentBackGround("#2e394b");
       }
     } else {
-      if (currentSection >= homePageSections.length) {
-        setCurrentBackGround("#242f41");
-      } else {
-        if (homePageSections[currentSection].backgroundColor === "#ffd778") {
-          setCurrentBackGround("#2e394b");
+      if (homePageSections) {
+        if (currentSection >= homePageSections.length) {
+          setCurrentBackGround("#242f41");
         } else {
-          setCurrentBackGround(
-            homePageSections[currentSection].backgroundColor
-          );
+          if (homePageSections[currentSection].backgroundColor === "#ffd778") {
+            setCurrentBackGround("#2e394b");
+          } else {
+            setCurrentBackGround(
+              homePageSections[currentSection].backgroundColor
+            );
+          }
         }
       }
     }
@@ -118,20 +122,26 @@ export default function Home() {
       ></div>
       {turnOffSlide ? (
         <div className="no-slide">
-          {sections &&
+          {sections ? (
             sections.map((section, index) => (
               <div key={index}>{createSection(section, index)}</div>
-            ))}
+            ))
+          ) : (
+            <Loading />
+          )}
           <div className="no-slide">
             <Footer />
           </div>
         </div>
       ) : (
         <FullPage controls>
-          {sections &&
+          {sections ? (
             sections.map((section, index) => (
               <Slide key={index}>{createSection(section, index)}</Slide>
-            ))}
+            ))
+          ) : (
+            <Loading />
+          )}
           <Slide>
             <Footer />
           </Slide>
