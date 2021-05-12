@@ -652,7 +652,7 @@ textarea::placeholder {
   border-radius: 100%;
 }
 
-.footer {
+.no-slide .footer {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -660,32 +660,7 @@ textarea::placeholder {
   height: -moz-fit-content;
   height: fit-content;
   background: #242f41;
-  padding: 3em 6vw 3em 6vw;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-}
-
-.footer .footer-main {
-  color: #fff;
-  max-width: 400px;
-  font-weight: 400;
-  font-size: 17px;
-  margin: auto 0 0 0;
-}
-
-.footer .footer-main p {
-  margin: 0 0 32px 0;
-}
-
-.footer .footer-main blockquote {
-  margin-bottom: 0px;
-  font-size: 11px;
-  line-height: normal;
+  padding: 4em 6vw 3em 6vw;
 }
 
 .header {
@@ -1344,7 +1319,7 @@ textarea::placeholder {
     font-size: 2em;
   }
   .homepage-section.homepage-section-padding {
-    padding: 3em 6vw 3em 6vw !important;
+    padding: 4em 6vw 4em 6vw !important;
     height: -webkit-fit-content !important;
     height: -moz-fit-content !important;
     height: fit-content !important;
@@ -1363,6 +1338,10 @@ textarea::placeholder {
     width: 100% !important;
   }
   /* Collaborators ------------------------------- */
+  .homepage-section-Collaborators .section-Collaborators-container:last-child {
+    border-bottom: thin #fff solid;
+    padding-bottom: 2em;
+  }
   .homepage-section-Collaborators .section-Collaborators-container .section-Collaborators-collaborator {
     width: 40% !important;
   }

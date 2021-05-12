@@ -262,7 +262,7 @@
       font-size: 2em;
     }
     &.homepage-section-padding {
-      padding: 3em 6vw 3em 6vw !important;
+      padding: 4em 6vw 4em 6vw !important;
       height: fit-content !important;
     }
   }
@@ -285,6 +285,10 @@
 
   &.homepage-section-Collaborators {
     .section-Collaborators-container {
+      &:last-child {
+        border-bottom: thin #fff solid;
+        padding-bottom: 2em;
+      }
       .section-Collaborators-collaborator {
         width: 40% !important;
       }
