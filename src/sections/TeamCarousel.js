@@ -44,7 +44,10 @@ export default function TeamCarousel(props) {
       }}
     >
       <div className="homepage-section-container">
-        <Carusel slideData={teamMember} caption={caption} />
+        <Carusel
+          slideData={teamMember}
+          caption={caption ? caption : "The Team"}
+        />
       </div>
     </article>
   );

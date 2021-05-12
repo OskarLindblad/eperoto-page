@@ -16,14 +16,16 @@ export default function OneBlock(props) {
       }}
     >
       <div className="homepage-section-container">
-        <h4 className="homepage-section-caption">{caption}</h4>
+        <h4 className="homepage-section-caption">{caption && caption}</h4>
         <ExpandingLine />
-        <BlockContent
-          blocks={content}
-          projectId="1ta3690e"
-          dataset="production"
-          className="section-OneBlock-text-content"
-        />
+        {content && (
+          <BlockContent
+            blocks={content}
+            projectId="1ta3690e"
+            dataset="production"
+            className="section-OneBlock-text-content"
+          />
+        )}
       </div>
     </article>
   );

@@ -27,7 +27,7 @@ export default function SepareBlocks(props) {
       }}
     >
       <div className="homepage-section-container">
-        <h4 className="homepage-section-caption">{caption}</h4>
+        <h4 className="homepage-section-caption">{caption && caption}</h4>
         <div className="section-SepareBlocks-text-content">
           {newContent.map((contentSection, index) => (
             <BlockContent

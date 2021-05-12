@@ -22,14 +22,16 @@ export default function BigBackground(props) {
           <source src={video} type="video/mp4" />
         </video>
         <div className="section-BigBackground-image-overlay">
-          <h2>{caption}</h2>
+          <h2>{caption && caption}</h2>
           <ExpandingLine />
-          <BlockContent
-            blocks={content}
-            projectId="1ta3690e"
-            dataset="production"
-            className="section-BigBackground-text-content"
-          />
+          {content && (
+            <BlockContent
+              blocks={content}
+              projectId="1ta3690e"
+              dataset="production"
+              className="section-BigBackground-text-content"
+            />
+          )}
         </div>
       </div>
     </article>

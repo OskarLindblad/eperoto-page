@@ -32,7 +32,7 @@ export default function WhyNotYou(props) {
       }}
     >
       <div className="homepage-section-container">
-        <h4 className="homepage-section-caption">{caption}</h4>
+        <h4 className="homepage-section-caption">{caption && caption}</h4>
         {positions &&
           positions.map((position, index) => (
             <article key={index}>
