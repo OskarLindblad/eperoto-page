@@ -36,19 +36,23 @@ export default function WhyNotYou(props) {
         {positions &&
           positions.map((position, index) => (
             <article key={index}>
-              <Link
-                to={"/positions/" + position.slug.current}
-                key={position.slug.current}
-              >
-                <div className="homepage-section-WhyNotYou-single">
-                  <h3>{position.title}</h3>
-                  <BlockContent
-                    blocks={position.body}
-                    projectId="1ta3690e"
-                    dataset="production"
-                  />
-                </div>
-              </Link>
+              {position.slug && (
+                <Link
+                  to={"/positions/" + position.slug.current}
+                  key={position.slug.current}
+                >
+                  <div className="homepage-section-WhyNotYou-single">
+                    <h3>{position.title && position.title}</h3>
+                    {position.body && (
+                      <BlockContent
+                        blocks={position.body}
+                        projectId="1ta3690e"
+                        dataset="production"
+                      />
+                    )}
+                  </div>
+                </Link>
+              )}
             </article>
           ))}
       </div>

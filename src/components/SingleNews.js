@@ -26,9 +26,7 @@ export default function SingleNews() {
           url
         }
       },
-      body,
-      "name": author->name,
-      "authorImage": author->image,
+      body
     }`
       )
       .then((data) => {
@@ -51,19 +49,24 @@ export default function SingleNews() {
         ></div>
 
         <article>
-          <h1>{singleNews.title}</h1>
-          <h4>{new Date(singleNews.publishedAt).toLocaleDateString()}</h4>
+          <h1>{singleNews.title && singleNews.title}</h1>
+          <h4>
+            {singleNews.publishedAt &&
+              new Date(singleNews.publishedAt).toLocaleDateString()}
+          </h4>
 
-          <BlockContent
-            blocks={singleNews.body}
-            projectId="1ta3690e"
-            dataset="production"
-          />
+          {singleNews.body && (
+            <BlockContent
+              blocks={singleNews.body}
+              projectId="1ta3690e"
+              dataset="production"
+            />
+          )}
           {singleNews.mainImage && (
             <div className="News-page-image">
               <img
                 src={singleNews.mainImage.asset.url}
-                alt={singleNews.title}
+                alt={singleNews.title ? singleNews.title : "news picture"}
               />
             </div>
           )}

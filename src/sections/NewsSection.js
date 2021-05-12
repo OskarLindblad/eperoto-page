@@ -43,16 +43,20 @@ export default function NewsSection(props) {
         {newsData &&
           newsData.map((news, index) => (
             <article key={index}>
-              <Link to={"/news/" + news.slug.current} key={news.slug.current}>
-                <div className="homepage-section-News-single">
-                  <h3>{news.title}</h3>
-                  <BlockContent
-                    blocks={news.body}
-                    projectId="1ta3690e"
-                    dataset="production"
-                  />
-                </div>
-              </Link>
+              {news.slug && (
+                <Link to={"/news/" + news.slug.current} key={news.slug.current}>
+                  <div className="homepage-section-News-single">
+                    <h3>{news.title && news.title}</h3>
+                    {news.body && (
+                      <BlockContent
+                        blocks={news.body}
+                        projectId="1ta3690e"
+                        dataset="production"
+                      />
+                    )}
+                  </div>
+                </Link>
+              )}
             </article>
           ))}
       </div>

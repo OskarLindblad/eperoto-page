@@ -1012,6 +1012,7 @@ textarea::placeholder {
   /* OneBlock ------------------------------- */
   /* SepareBlocks ------------------------------- */
   /* Collaborators ------------------------------- */
+  /* TeamCarousel ------------------------------- */
   /* News ------------------------------- */
   /* WhyNotYou ------------------------------- */
 }
@@ -1075,6 +1076,7 @@ textarea::placeholder {
 .homepage-section .homepage-section-BigBackground-layers {
   position: relative;
   background-color: #2e394b;
+  height: 100%;
 }
 
 .homepage-section .homepage-section-BigBackground-layers .section-BigBackground-image-overlay {
@@ -1182,6 +1184,10 @@ textarea::placeholder {
 .homepage-section.homepage-section-Collaborators .section-Collaborators-container .section-Collaborators-collaborator img {
   width: 100%;
   max-height: 4em;
+}
+
+.homepage-section.homepage-section-TeamCarousel {
+  min-height: 100vh;
 }
 
 .homepage-section.homepage-section-News p {
@@ -1478,6 +1484,61 @@ textarea::placeholder {
 .slider .slider-image img {
   max-height: 40vh;
   width: 250px;
+}
+
+.slider .slider-image .slider-image-current-noShow {
+  opacity: 0;
+}
+
+.slider .slider-image .slider-image-wrapper {
+  position: relative;
+}
+
+.slider .slider-image .slider-image-wrapper img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-transform: translate(-50%, -100%);
+          transform: translate(-50%, -100%);
+}
+
+.slider .slider-image .slider-image-wrapper .slider-image-current {
+  z-index: 1;
+}
+
+.slider .slider-image .slider-image-wrapper .slider-image-before,
+.slider .slider-image .slider-image-wrapper .slider-image-after {
+  max-height: 22vh;
+  top: -10px;
+  -webkit-filter: opacity(50%) brightness(2);
+          filter: opacity(50%) brightness(2);
+  cursor: pointer;
+}
+
+.slider .slider-image .slider-image-wrapper .slider-image-before:hover,
+.slider .slider-image .slider-image-wrapper .slider-image-after:hover {
+  -webkit-filter: opacity(90%) brightness(4);
+          filter: opacity(90%) brightness(4);
+  -webkit-transition: left 1s ease-in-out, -webkit-filter 1s ease-in-out;
+  transition: left 1s ease-in-out, -webkit-filter 1s ease-in-out;
+  transition: filter 1s ease-in-out, left 1s ease-in-out;
+  transition: filter 1s ease-in-out, left 1s ease-in-out, -webkit-filter 1s ease-in-out;
+}
+
+.slider .slider-image .slider-image-wrapper .slider-image-before {
+  left: -20px;
+}
+
+.slider .slider-image .slider-image-wrapper .slider-image-before:hover {
+  left: -30px;
+}
+
+.slider .slider-image .slider-image-wrapper .slider-image-after {
+  left: 20px;
+}
+
+.slider .slider-image .slider-image-wrapper .slider-image-after:hover {
+  left: 30px;
 }
 
 .slider .slider-left-arrow,

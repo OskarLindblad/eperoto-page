@@ -50,16 +50,19 @@ export default function Collaborators(props) {
         <div className="section-Collaborators-container">
           {collaborators &&
             collaborators.map((collaborator, index) => (
-              <a
-                className="section-Collaborators-collaborator"
-                key={index}
-                href={collaborator.link}
-              >
-                <img
-                  src={collaborator.image.asset.url}
-                  alt={collaborator.name}
-                />
-              </a>
+              <React.Fragment key={index}>
+                {collaborator.image && (
+                  <a
+                    className="section-Collaborators-collaborator"
+                    href={collaborator.link && collaborator.link}
+                  >
+                    <img
+                      src={collaborator.image.asset.url}
+                      alt={collaborator.name ? collaborator.name : collaborator}
+                    />
+                  </a>
+                )}
+              </React.Fragment>
             ))}
         </div>
       </div>

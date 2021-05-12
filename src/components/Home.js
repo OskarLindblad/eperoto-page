@@ -47,20 +47,22 @@ export default function Home() {
     sections = homePageSections.sort((a, b) => (a.order > b.order ? 1 : -1));
   }
   const createSection = (section, index) => {
-    if (section.sectionType === "bigBackground") {
-      return <BigBackground sectionData={section} index={index} />;
-    } else if (section.sectionType === "oneBlock") {
-      return <OneBlock sectionData={section} index={index} />;
-    } else if (section.sectionType === "separeBlocks") {
-      return <SepareBlocks sectionData={section} index={index} />;
-    } else if (section.sectionType === "collaborators") {
-      return <Collaborators sectionData={section} index={index} />;
-    } else if (section.sectionType === "news") {
-      return <NewsSection sectionData={section} index={index} />;
-    } else if (section.sectionType === "whyNotYou") {
-      return <WhyNotYou sectionData={section} index={index} />;
-    } else if (section.sectionType === "teamCarousel") {
-      return <TeamCarousel sectionData={section} index={index} />;
+    if (section.sectionType) {
+      if (section.sectionType === "bigBackground") {
+        return <BigBackground sectionData={section} index={index} />;
+      } else if (section.sectionType === "oneBlock") {
+        return <OneBlock sectionData={section} index={index} />;
+      } else if (section.sectionType === "separeBlocks") {
+        return <SepareBlocks sectionData={section} index={index} />;
+      } else if (section.sectionType === "collaborators") {
+        return <Collaborators sectionData={section} index={index} />;
+      } else if (section.sectionType === "news") {
+        return <NewsSection sectionData={section} index={index} />;
+      } else if (section.sectionType === "whyNotYou") {
+        return <WhyNotYou sectionData={section} index={index} />;
+      } else if (section.sectionType === "teamCarousel") {
+        return <TeamCarousel sectionData={section} index={index} />;
+      }
     }
   };
   const dimensions = useWindowDimensions();
@@ -102,12 +104,16 @@ export default function Home() {
         if (currentSection >= homePageSections.length) {
           setCurrentBackGround("#242f41");
         } else {
-          if (homePageSections[currentSection].backgroundColor === "#ffd778") {
-            setCurrentBackGround("#2e394b");
-          } else {
-            setCurrentBackGround(
-              homePageSections[currentSection].backgroundColor
-            );
+          if (homePageSections[currentSection].backgroundColor) {
+            if (
+              homePageSections[currentSection].backgroundColor === "#ffd778"
+            ) {
+              setCurrentBackGround("#2e394b");
+            } else {
+              setCurrentBackGround(
+                homePageSections[currentSection].backgroundColor
+              );
+            }
           }
         }
       }

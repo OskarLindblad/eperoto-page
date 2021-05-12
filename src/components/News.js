@@ -16,13 +16,6 @@ export default function News() {
       slug,
       body,
       publishedAt,
-      mainImage{
-        asset->{
-          _id,
-          url
-        },
-        body
-      }
     }`
       )
       .then((data) => setNews(data))
@@ -49,18 +42,24 @@ export default function News() {
               <div className="News-page-single-container">
                 <div className="News-page-single">
                   <Link to={"/news/" + news.slug.current}>
-                    <h3>{news.title}</h3>
-                    <h4>{new Date(news.publishedAt).toLocaleDateString()}</h4>
+                    <h3>{news.title && news.title}</h3>
+                    <h4>
+                      {news.publishedAt &&
+                        new Date(news.publishedAt).toLocaleDateString()}
+                    </h4>
                   </Link>
-
-                  <BlockContent
-                    blocks={news.body[0]}
-                    projectId="1ta3690e"
-                    dataset="production"
-                  />
-                  <Link to={"/news/" + news.slug.current}>
-                    <div className="News-page-single-readMore"></div>
-                  </Link>
+                  {news.body && (
+                    <BlockContent
+                      blocks={news.body[0]}
+                      projectId="1ta3690e"
+                      dataset="production"
+                    />
+                  )}
+                  {news.slug && (
+                    <Link to={"/news/" + news.slug.current}>
+                      <div className="News-page-single-readMore"></div>
+                    </Link>
+                  )}
                 </div>
               </div>
             </article>

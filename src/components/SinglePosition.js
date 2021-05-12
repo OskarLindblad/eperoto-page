@@ -25,7 +25,6 @@ export default function SinglePosition() {
       })
       .catch(console.error);
   }, [slug]);
-
   let scrolledDown = false;
   if (scrollPosition() > 100) {
     scrolledDown = true;
@@ -40,13 +39,15 @@ export default function SinglePosition() {
         ></div>
 
         <article>
-          <h1>{singlePosition.title}</h1>
+          <h1>{singlePosition.title && singlePosition.title}</h1>
 
-          <BlockContent
-            blocks={singlePosition.body}
-            projectId="1ta3690e"
-            dataset="production"
-          />
+          {singlePosition.body && (
+            <BlockContent
+              blocks={singlePosition.body}
+              projectId="1ta3690e"
+              dataset="production"
+            />
+          )}
           <Link className="Positions-page-btn" to={"/contact/"}>
             <div>Contact Us</div>
           </Link>

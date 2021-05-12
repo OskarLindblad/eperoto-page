@@ -27,21 +27,27 @@ export default function Footer() {
   return (
     <footer className="footer ">
       <div className="footer-main ">
-        <a href={`mailto:${footer.mail}`} className="mail">
-          {footer.mail}
-        </a>
+        {footer.mail && (
+          <a href={`mailto:${footer.mail}`} className="mail">
+            {footer.mail}
+          </a>
+        )}
         <br />
-        <a href={`tel:${footer.phone}`} className="tel">
-          {footer.phone}
-        </a>
+        {footer.phone && (
+          <a href={`tel:${footer.phone}`} className="tel">
+            {footer.phone}
+          </a>
+        )}
         <br />
         <br />
 
-        <BlockContent
-          blocks={footer.body}
-          projectId="1ta3690e"
-          dataset="production"
-        />
+        {footer.body && (
+          <BlockContent
+            blocks={footer.body}
+            projectId="1ta3690e"
+            dataset="production"
+          />
+        )}
       </div>
       <div className="footer-socialMedia">
         {footer.socialMediaLinks &&

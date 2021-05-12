@@ -15,13 +15,6 @@ export default function Position() {
       title,
       slug,
       body,
-      mainImage{
-        asset->{
-          _id,
-          url
-        },
-        body
-      }
     }`
       )
       .then((data) => setPosition(data))
@@ -48,21 +41,27 @@ export default function Position() {
             <article key={index}>
               <div className="Positions-page-single-container">
                 <div className="Positions-page-single">
-                  <Link
-                    to={"/positions/" + positions.slug.current}
-                    key={positions.slug.current}
-                  >
-                    <h3>{positions.title}</h3>
-                  </Link>
+                  {positions.slug && (
+                    <Link
+                      to={"/positions/" + positions.slug.current}
+                      key={positions.slug.current}
+                    >
+                      <h3>{positions.title && positions.title}</h3>
+                    </Link>
+                  )}
 
-                  <BlockContent
-                    blocks={positions.body[0]}
-                    projectId="1ta3690e"
-                    dataset="production"
-                  />
-                  <Link to={"/positions/" + positions.slug.current}>
-                    <div className="Positions-page-single-readMore"></div>
-                  </Link>
+                  {positions.body && (
+                    <BlockContent
+                      blocks={positions.body[0]}
+                      projectId="1ta3690e"
+                      dataset="production"
+                    />
+                  )}
+                  {positions.slug && (
+                    <Link to={"/positions/" + positions.slug.current}>
+                      <div className="Positions-page-single-readMore"></div>
+                    </Link>
+                  )}
                 </div>
               </div>
             </article>
