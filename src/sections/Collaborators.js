@@ -29,6 +29,13 @@ export default function Collaborators(props) {
       })
       .catch(console.error);
   }, []);
+  let collaboratorsReordered;
+
+  if (collaborators) {
+    collaboratorsReordered = collaborators.sort((a, b) =>
+      a.order > b.order ? 1 : -1
+    );
+  }
   return (
     <article
       className="homepage-section homepage-section-Collaborators 
@@ -50,8 +57,8 @@ export default function Collaborators(props) {
         )}
         <br />
         <div className="section-Collaborators-container">
-          {collaborators &&
-            collaborators.map((collaborator, index) => (
+          {collaboratorsReordered &&
+            collaboratorsReordered.map((collaborator, index) => (
               <React.Fragment key={index}>
                 {collaborator.image && (
                   <a

@@ -101,18 +101,23 @@ export default function Home() {
       }
     } else {
       if (homePageSections) {
-        if (currentSection >= homePageSections.length) {
-          setCurrentBackGround("#242f41");
+        if (scrollPosition < window.innerHeight) {
+          // If statement did'nt catch every top color so added this
+          setCurrentBackGround("transparent");
         } else {
-          if (homePageSections[currentSection].backgroundColor) {
-            if (
-              homePageSections[currentSection].backgroundColor === "#ffd778"
-            ) {
-              setCurrentBackGround("#2e394b");
-            } else {
-              setCurrentBackGround(
-                homePageSections[currentSection].backgroundColor
-              );
+          if (currentSection >= homePageSections.length) {
+            setCurrentBackGround("#242f41");
+          } else {
+            if (homePageSections[currentSection].backgroundColor) {
+              if (
+                homePageSections[currentSection].backgroundColor === "#ffd778"
+              ) {
+                setCurrentBackGround("#2e394b");
+              } else {
+                setCurrentBackGround(
+                  homePageSections[currentSection].backgroundColor
+                );
+              }
             }
           }
         }

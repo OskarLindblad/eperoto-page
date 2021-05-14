@@ -1702,7 +1702,7 @@ textarea::placeholder {
 /* Loading*/
 .loading-gif {
   height: 100vh;
-  width: 100vw;
+  width: calc(100vw - 0.375em);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
