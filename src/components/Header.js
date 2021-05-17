@@ -21,6 +21,7 @@ export default function Header({ darkColors }) {
     scrolledDown = true;
   }
 
+
   return (
     <header className={`header ${darkColors ? "header-dark-colors" : ""}`}>
       <NavLink to="/" exact>
