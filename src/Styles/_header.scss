@@ -295,6 +295,12 @@
 
 @media (max-width: 768px) {
   .header {
+    #nav li {
+      margin: 2em 0;
+      a {
+        font-size: 24px;
+      }
+    }
     padding: 2em 6vw 2em 6vw;
     #logo.logo-scrolledDown {
       height: 3.5em !important;
