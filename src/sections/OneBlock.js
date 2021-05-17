@@ -1,5 +1,5 @@
 import React from "react";
-import ExpandingLine from "../components/ExpandingLine";
+import ExpandingLineYellow from "../components/ExpandingLineYellow";
 import BlockContent from "@sanity/block-content-to-react";
 
 export default function OneBlock(props) {
@@ -17,7 +17,7 @@ export default function OneBlock(props) {
     >
       <div className="homepage-section-container">
         <h4 className="homepage-section-caption">{caption && caption}</h4>
-        <ExpandingLine />
+        <ExpandingLineYellow />
         {content && (
           <BlockContent
             blocks={content}

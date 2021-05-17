@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import eperotoLogo from "../images/Eperoto-Logo-1.png";
 import eperotoLogoDark from "../images/Eperoto-Logo-Dark.png";
+import { useLocation } from "react-router-dom";
 
 import scrollPosition from "../modules/scrollPosition";
 
@@ -21,9 +22,23 @@ export default function Header({ darkColors }) {
     scrolledDown = true;
   }
 
+  const { pathname } = useLocation();
+  let hide = false;
+  useEffect(() => {
+    setTimeout(function () {
+      if (pathname === "/" && darkColors) {
+        hide = true;
+      } else {
+        hide = false;
+      }
+    }, 1000);
+  }, []);
 
   return (
-    <header className={`header ${darkColors ? "header-dark-colors" : ""}`}>
+    <header
+      className={`header ${darkColors ? "header-dark-colors" : ""}`}
+      style={{ display: `${hide ? "none" : "flex"}` }}
+    >
       <NavLink to="/" exact>
         {darkColors ? (
           <img

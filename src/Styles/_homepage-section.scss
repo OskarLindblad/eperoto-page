@@ -11,7 +11,7 @@
   top: 0;
   left: 0;
   z-index: 2;
-  transition: background-color 0.2s ease-in-out;
+  transition: background-color 0.1s ease-in-out;
 }
 
 .homepage-section {
@@ -73,7 +73,9 @@
       height: 100vh;
       width: 100%;
       background-color: rgba(46, 57, 75, 0.65);
-
+      .section-BigBackground-showContent {
+        transition: opacity linear 1s;
+      }
       .section-BigBackground-text-content {
         display: flex;
         flex-direction: column;
@@ -195,8 +197,7 @@
         overflow: hidden;
       }
       &::after {
-        content: "\2192";
-        font-family: icons;
+        content: url(./images/arrowDark.svg);
         font-size: 3em;
         color: #2e394b;
         position: absolute;
@@ -243,7 +244,7 @@
         overflow: hidden;
       }
       &::after {
-        content: "\2192";
+        content: url(./images/arrowYellow.svg);
         font-family: icons;
         font-size: 3em;
         color: #ffd778;

@@ -822,7 +822,7 @@ textarea::placeholder {
 .header #nav-menu #cross {
   -webkit-transform: rotate(45deg);
   transform: rotate(45deg);
-  right: 0.375em;
+  right: 0.75em;
 }
 
 .header #nav-menu #cross span:nth-child(1) {
@@ -1011,8 +1011,8 @@ textarea::placeholder {
   top: 0;
   left: 0;
   z-index: 2;
-  -webkit-transition: background-color 0.2s ease-in-out;
-  transition: background-color 0.2s ease-in-out;
+  -webkit-transition: background-color 0.1s ease-in-out;
+  transition: background-color 0.1s ease-in-out;
 }
 
 .homepage-section {
@@ -1095,6 +1095,11 @@ textarea::placeholder {
   height: 100vh;
   width: 100%;
   background-color: rgba(46, 57, 75, 0.65);
+}
+
+.homepage-section .homepage-section-BigBackground-layers .section-BigBackground-image-overlay .section-BigBackground-showContent {
+  -webkit-transition: opacity linear 1s;
+  transition: opacity linear 1s;
 }
 
 .homepage-section .homepage-section-BigBackground-layers .section-BigBackground-image-overlay .section-BigBackground-text-content {
@@ -1249,8 +1254,7 @@ textarea::placeholder {
 }
 
 .homepage-section.homepage-section-News .homepage-section-News-single::after {
-  content: "\2192";
-  font-family: icons;
+  content: url(./images/arrowDark.svg);
   font-size: 3em;
   color: #2e394b;
   position: absolute;
@@ -1311,7 +1315,7 @@ textarea::placeholder {
 }
 
 .homepage-section.homepage-section-WhyNotYou .homepage-section-WhyNotYou-single::after {
-  content: "\2192";
+  content: url(./images/arrowYellow.svg);
   font-family: icons;
   font-size: 3em;
   color: #ffd778;
@@ -1445,6 +1449,15 @@ textarea::placeholder {
   margin-bottom: 26px;
 }
 
+.inView-line-yellow {
+  height: 1px;
+  margin: 0.411765em 0.070589em 0;
+  background-color: #ffd778;
+  -webkit-transition: width 2s;
+  transition: width 2s;
+  margin-bottom: 26px;
+}
+
 .slider {
   position: relative;
   height: 60vh;
@@ -1492,7 +1505,7 @@ textarea::placeholder {
 
 .slider .slider-image img {
   max-height: 40vh;
-  width: 250px;
+  max-width: 250px;
 }
 
 .slider .slider-image .slider-image-current-noShow {
@@ -1649,6 +1662,13 @@ textarea::placeholder {
   }
   .slider .slider-left-arrow {
     display: none;
+  }
+}
+
+@media screen and (max-height: 800px) {
+  .slider .slider-left-arrow,
+  .slider .slider-right-arrow {
+    top: 110%;
   }
 }
 
@@ -1818,7 +1838,7 @@ textarea::placeholder {
 }
 
 .News-page article .News-page-single-container .News-page-single::after {
-  content: "\2192";
+  content: url(./images/arrowWhite.svg);
   font-family: icons;
   font-size: 3em;
   color: #fff;
@@ -1849,7 +1869,7 @@ textarea::placeholder {
     -webkit-line-clamp: 3 !important;
   }
   article .News-page-single-container .News-page-single::after {
-    top: 95% !important;
+    top: 90% !important;
   }
   article .News-page-single-readMore {
     width: 50px !important;
@@ -2001,7 +2021,7 @@ textarea::placeholder {
     -webkit-line-clamp: 3 !important;
   }
   article .News-page-single-container .News-page-single::after {
-    top: 95% !important;
+    top: 90% !important;
   }
   article .News-page-single-readMore {
     width: 50px !important;
@@ -2099,7 +2119,7 @@ textarea::placeholder {
 }
 
 .Positions-page article .Positions-page-single-container .Positions-page-single::after {
-  content: "\2192";
+  content: url(./images/arrowWhite.svg);
   font-family: icons;
   font-size: 3em;
   color: #fff;
@@ -2130,7 +2150,7 @@ textarea::placeholder {
     -webkit-line-clamp: 3 !important;
   }
   article .Positions-page-single-container .Positions-page-single::after {
-    top: 95% !important;
+    top: 90% !important;
   }
   article .Positions-page-single-readMore {
     width: 50px !important;

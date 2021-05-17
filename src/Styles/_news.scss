@@ -73,7 +73,7 @@
           overflow: hidden;
         }
         &::after {
-          content: "\2192";
+          content: url(./images/arrowWhite.svg);
           font-family: icons;
           font-size: 3em;
           color: #fff;
@@ -109,7 +109,7 @@
           -webkit-line-clamp: 3 !important;
         }
         &::after {
-          top: 95% !important;
+          top: 90% !important;
         }
       }
     }
@@ -239,7 +239,7 @@
           -webkit-line-clamp: 3 !important;
         }
         &::after {
-          top: 95% !important;
+          top: 90% !important;
         }
       }
     }

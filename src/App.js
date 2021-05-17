@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Home from "./components/Home";
 import SingleNews from "./components/SingleNews";
@@ -7,14 +7,15 @@ import SinglePosition from "./components/SinglePosition";
 import Positions from "./components/Positions";
 import Header from "./components/Header";
 import Contact from "./components/Contact";
+import ScrollToTop from "./modules/ScrollToTop";
 
 function App() {
-  const [darkColors, setDarkColors] = useState(true);
-
   return (
     <BrowserRouter>
-      <Header darkColors={darkColors} />
+      <Header />
       <main>
+        <ScrollToTop />
+
         <Switch>
           <Route component={Home} path="/" exact />
           <Route component={SingleNews} path="/news/:slug" />

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import sanityClient from "../client.js";
-import ExpandingLine from "../components/ExpandingLine";
+import ExpandingLine from "../components/ExpandingLineYellow";
+
 import BlockContent from "@sanity/block-content-to-react";
 
 export default function Collaborators(props) {

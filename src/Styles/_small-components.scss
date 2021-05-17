@@ -5,6 +5,13 @@
   transition: width 2s;
   margin-bottom: 26px;
 }
+.inView-line-yellow {
+  height: 1px;
+  margin: 0.411765em 0.070589em 0;
+  background-color: #ffd778;
+  transition: width 2s;
+  margin-bottom: 26px;
+}
 
 .slider {
   position: relative;
@@ -33,7 +40,7 @@
     flex-direction: column;
     img {
       max-height: 40vh;
-      width: 250px;
+      max-width: 250px;
     }
     .slider-image-current-noShow {
       opacity: 0;
@@ -156,6 +163,15 @@
     }
     .slider-left-arrow {
       display: none;
+    }
+  }
+}
+
+@media screen and (max-height: 800px) {
+  .slider {
+    .slider-left-arrow,
+    .slider-right-arrow {
+      top: 110%;
     }
   }
 }

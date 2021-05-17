@@ -1,13 +1,12 @@
 import React, { useEffect, useState } from "react";
 import sanityClient from "../client.js";
-import { Slide } from "react-full-page";
 import useWindowDimensions from "../modules/useWindowDimensions";
 
 import videoThumb from "../images/home_video_thumb.jpg";
 import video from "../images/home_video.mp4";
 
+import Header from "../components/Header";
 import Footer from "../components/Footer";
-import Loading from "../components/Loading";
 
 import BigBackground from "../sections/BigBackground";
 import Collaborators from "../sections/Collaborators";
@@ -20,6 +19,7 @@ import WhyNotYou from "../sections/WhyNotYou";
 export default function Home() {
   const [homePageSections, setHomePageSections] = useState(null);
   const [currentBackGround, setCurrentBackGround] = useState("rgba(0,0,0,0)");
+  const [darkColors, setDarkColors] = useState(false);
 
   useEffect(() => {
     sanityClient
@@ -96,7 +96,9 @@ export default function Home() {
   const checkBackGround = () => {
     const currentSection = parseInt((scrollPosition + 1) / window.innerHeight);
     // If width is lower than 769px change to one color(except on bigBackground)
-    if (dimensions.width < 769) {
+    if (dimensions.width < 769 || dimensions.height < 800) {
+      setDarkColors(false);
+
       if (scrollPosition < window.innerHeight) {
         setCurrentBackGround("rgba(0,0,0,0)");
       } else {
@@ -106,18 +108,22 @@ export default function Home() {
       if (homePageSections) {
         if (scrollPosition < window.innerHeight) {
           // If statement did'nt catch every top color so added this
-          setCurrentBackGround("transparent");
+          setCurrentBackGround("rgba(0,0,0,0)");
         } else {
           if (currentSection >= homePageSections.length) {
+            // Footer
             setCurrentBackGround("#242f41");
           } else {
             if (homePageSections[currentSection].backgroundColor) {
               setCurrentBackGround(
                 homePageSections[currentSection].backgroundColor
               );
-              //              if (
-              //              homePageSections[currentSection].backgroundColor === "#ffd778"
-              //          )
+              setDarkColors(false);
+              if (
+                homePageSections[currentSection].backgroundColor === "#ffd778"
+              ) {
+                setDarkColors(true);
+              }
             }
           }
         }
@@ -126,54 +132,71 @@ export default function Home() {
   };
 
   return (
-    <main>
-      <div
-        className="header-background"
-        style={{ background: currentBackGround }}
-      ></div>
-      {turnOffSlide ? (
-        <div className="no-slide">
-          {sections ? (
-            sections.map((section, index) => (
-              <div key={index}>{createSection(section, index)}</div>
-            ))
-          ) : (
-            <article className="homepage-section homepage-section-BigBackground ">
-              <div className=" homepage-section-BigBackground-layers ">
-                <video
-                  playsInline
-                  autoPlay
-                  muted
-                  loop
-                  poster={videoThumb}
-                  className="section-BigBackground-video"
-                >
-                  <source src={video} type="video/mp4" />
-                </video>
-                <div className="section-BigBackground-image-overlay"></div>
-              </div>
-            </article>
-          )}
+    <>
+      <Header darkColors={darkColors} style={{ zIndex: "2000" }} />
+      <main>
+        <div
+          className="header-background"
+          style={{ background: currentBackGround }}
+        ></div>
+        {turnOffSlide ? (
           <div className="no-slide">
+            {sections ? (
+              sections.map((section, index) => (
+                <div key={index}>{createSection(section, index)}</div>
+              ))
+            ) : (
+              <article className="homepage-section homepage-section-BigBackground ">
+                <div className=" homepage-section-BigBackground-layers ">
+                  <video
+                    playsInline
+                    autoPlay
+                    muted
+                    loop
+                    poster={videoThumb}
+                    className="section-BigBackground-video"
+                  >
+                    <source src={video} type="video/mp4" />
+                  </video>
+                  <div className="section-BigBackground-image-overlay">
+                    <h2>Value and evaluate your legal disputes​​</h2>
+                  </div>
+                </div>
+              </article>
+            )}
+            <div className="no-slide">
+              <Footer />
+            </div>
+          </div>
+        ) : (
+          <div>
+            {sections ? (
+              sections.map((section, index) => (
+                <div style={{ height: "100vh" }} key={index}>
+                  {createSection(section, index)}
+                </div>
+              ))
+            ) : (
+              <article className="homepage-section homepage-section-BigBackground ">
+                <div className=" homepage-section-BigBackground-layers ">
+                  <video
+                    playsInline
+                    autoPlay
+                    muted
+                    loop
+                    poster={videoThumb}
+                    className="section-BigBackground-video"
+                  >
+                    <source src={video} type="video/mp4" />
+                  </video>
+                  <div className="section-BigBackground-image-overlay"></div>
+                </div>
+              </article>
+            )}
             <Footer />
           </div>
-        </div>
-      ) : (
-        <div>
-          {sections ? (
-            sections.map((section, index) => (
-              <div style={{ height: "100vh" }} key={index}>
-                {createSection(section, index)}
-              </div>
-            ))
-          ) : (
-            <Loading />
-          )}
-          <Slide>
-            <Footer />
-          </Slide>
-        </div>
-      )}
-    </main>
+        )}
+      </main>
+    </>
   );
 }
