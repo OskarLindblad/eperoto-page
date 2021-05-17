@@ -6,13 +6,12 @@ import schemaTypes from "all:part:@sanity/base/schema-type";
 
 // We import object and document schemas
 import blockContent from "./blockContent";
-import news from "./news";
-import teamMember from "./teamMember";
-
-import homepageSection from "./homepageSection";
-import footer from "./footer";
-import collaborator from "./collaborator";
-import positions from "./positions";
+import news from "./collection/news";
+import teamMember from "./collection/teamMember";
+import homepageSection from "./collection/homepageSection";
+import footer from "./collection/footer";
+import collaborator from "./collection/collaborator";
+import positions from "./collection/positions";
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({

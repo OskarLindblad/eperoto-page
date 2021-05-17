@@ -1,7 +1,10 @@
 import React, { useEffect, useState } from "react";
 import sanityClient from "../client.js";
-import { FullPage, Slide } from "react-full-page";
+import { Slide } from "react-full-page";
 import useWindowDimensions from "../modules/useWindowDimensions";
+
+import videoThumb from "../images/home_video_thumb.jpg";
+import video from "../images/home_video.mp4";
 
 import Footer from "../components/Footer";
 import Loading from "../components/Loading";
@@ -109,15 +112,12 @@ export default function Home() {
             setCurrentBackGround("#242f41");
           } else {
             if (homePageSections[currentSection].backgroundColor) {
-              if (
-                homePageSections[currentSection].backgroundColor === "#ffd778"
-              ) {
-                setCurrentBackGround("#2e394b");
-              } else {
-                setCurrentBackGround(
-                  homePageSections[currentSection].backgroundColor
-                );
-              }
+              setCurrentBackGround(
+                homePageSections[currentSection].backgroundColor
+              );
+              //              if (
+              //              homePageSections[currentSection].backgroundColor === "#ffd778"
+              //          )
             }
           }
         }
@@ -138,17 +138,33 @@ export default function Home() {
               <div key={index}>{createSection(section, index)}</div>
             ))
           ) : (
-            <Loading />
+            <article className="homepage-section homepage-section-BigBackground ">
+              <div className=" homepage-section-BigBackground-layers ">
+                <video
+                  playsInline
+                  autoPlay
+                  muted
+                  loop
+                  poster={videoThumb}
+                  className="section-BigBackground-video"
+                >
+                  <source src={video} type="video/mp4" />
+                </video>
+                <div className="section-BigBackground-image-overlay"></div>
+              </div>
+            </article>
           )}
           <div className="no-slide">
             <Footer />
           </div>
         </div>
       ) : (
-        <FullPage controls>
+        <div>
           {sections ? (
             sections.map((section, index) => (
-              <Slide key={index}>{createSection(section, index)}</Slide>
+              <div style={{ height: "100vh" }} key={index}>
+                {createSection(section, index)}
+              </div>
             ))
           ) : (
             <Loading />
@@ -156,7 +172,7 @@ export default function Home() {
           <Slide>
             <Footer />
           </Slide>
-        </FullPage>
+        </div>
       )}
     </main>
   );

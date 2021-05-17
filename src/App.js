@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Home from "./components/Home";
 import SingleNews from "./components/SingleNews";
@@ -8,9 +9,11 @@ import Header from "./components/Header";
 import Contact from "./components/Contact";
 
 function App() {
+  const [darkColors, setDarkColors] = useState(true);
+
   return (
     <BrowserRouter>
-      <Header />
+      <Header darkColors={darkColors} />
       <main>
         <Switch>
           <Route component={Home} path="/" exact />

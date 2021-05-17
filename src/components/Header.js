@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import eperotoLogo from "../images/Eperoto-Logo-1.png";
+import eperotoLogoDark from "../images/Eperoto-Logo-Dark.png";
+
 import scrollPosition from "../modules/scrollPosition";
 
-export default function NavBar() {
+export default function Header({ darkColors }) {
   const [menuToggle, setMenuToggle] = useState(false);
 
   if (menuToggle) {
@@ -20,15 +22,25 @@ export default function NavBar() {
   }
 
   return (
-    <header className="header">
+    <header className={`header ${darkColors ? "header-dark-colors" : ""}`}>
       <NavLink to="/" exact>
-        <img
-          className={`logo ${scrolledDown && "logo-scrolledDown"}`}
-          id="logo"
-          src={eperotoLogo}
-          alt="Eperoto"
-          onClick={() => setMenuToggle(false)}
-        />
+        {darkColors ? (
+          <img
+            className={`logo ${scrolledDown && "logo-scrolledDown"}`}
+            id="logo"
+            src={eperotoLogoDark}
+            alt="Eperoto"
+            onClick={() => setMenuToggle(false)}
+          />
+        ) : (
+          <img
+            className={`logo ${scrolledDown && "logo-scrolledDown"}`}
+            id="logo"
+            src={eperotoLogo}
+            alt="Eperoto"
+            onClick={() => setMenuToggle(false)}
+          />
+        )}
       </NavLink>
       <div
         id="nav-menu"

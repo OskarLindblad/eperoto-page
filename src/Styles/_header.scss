@@ -71,6 +71,12 @@
     height: 4.5em;
   }
   /** NAV */
+  //Dark
+  .header-dark-colors {
+    .header #menu-toggle span {
+      color: #2e394b !important;
+    }
+  }
   #nav-menu {
     margin-top: 5px;
   }
@@ -90,6 +96,11 @@
     -webkit-transition: width 0.25s ease-in-out, height 0.25s ease-in-out;
     -o-transition: width 0.25s ease-in-out, height 0.25s ease-in-out;
     transition: width 0.25s ease-in-out, height 0.25s ease-in-out;
+  }
+  &.header-dark-colors {
+    #menu-toggle span {
+      background: #2e394b;
+    }
   }
   #menu-toggle:hover span {
     background-color: #ff695a;
@@ -136,6 +147,7 @@
     -webkit-transform: rotate(45deg);
     -ms-transform: rotate(45deg);
     transform: rotate(45deg);
+    right: 0.375em;
   }
   #nav-menu #cross span:nth-child(1) {
     position: absolute;

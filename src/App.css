@@ -744,6 +744,10 @@ textarea::placeholder {
   height: 4.5em;
 }
 
+.header .header-dark-colors .header #menu-toggle span {
+  color: #2e394b !important;
+}
+
 .header #nav-menu {
   margin-top: 5px;
 }
@@ -764,6 +768,10 @@ textarea::placeholder {
   background: #fff;
   -webkit-transition: width 0.25s ease-in-out, height 0.25s ease-in-out;
   transition: width 0.25s ease-in-out, height 0.25s ease-in-out;
+}
+
+.header.header-dark-colors #menu-toggle span {
+  background: #2e394b;
 }
 
 .header #menu-toggle:hover span {
@@ -814,6 +822,7 @@ textarea::placeholder {
 .header #nav-menu #cross {
   -webkit-transform: rotate(45deg);
   transform: rotate(45deg);
+  right: 0.375em;
 }
 
 .header #nav-menu #cross span:nth-child(1) {
