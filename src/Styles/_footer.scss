@@ -43,3 +43,10 @@
     padding: 4em 6vw 3em 6vw;
   }
 }
+
+@media screen and (max-width: 769px) {
+  .footer {
+    height: fit-content;
+    padding: 6em 6vw 3em 6vw;
+  }
+}

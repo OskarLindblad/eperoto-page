@@ -663,6 +663,15 @@ textarea::placeholder {
   padding: 4em 6vw 3em 6vw;
 }
 
+@media screen and (max-width: 769px) {
+  .footer {
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    padding: 6em 6vw 3em 6vw;
+  }
+}
+
 .header {
   display: -webkit-box;
   display: -ms-flexbox;
