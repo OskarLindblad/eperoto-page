@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import sanityClient from "../client.js";
-import ExpandingLine from "../components/ExpandingLineYellow";
+import InviewLine from "../components/InviewLine";
 
 import BlockContent from "@sanity/block-content-to-react";
 
@@ -47,7 +47,7 @@ export default function Collaborators(props) {
     >
       <div className="homepage-section-container">
         <h4 className="homepage-section-caption">{caption && caption}</h4>
-        <ExpandingLine />
+        <InviewLine color={"#ffd778"} />
         {content && (
           <BlockContent
             blocks={content}

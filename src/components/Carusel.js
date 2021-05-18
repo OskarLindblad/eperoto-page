@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import ExpandingLine from "../components/ExpandingLine";
+import InviewLine from "./InviewLine";
 import BlockContent from "@sanity/block-content-to-react";
 
 const Carusel = ({ slideData, caption }) => {
@@ -51,7 +51,7 @@ const Carusel = ({ slideData, caption }) => {
                   <h3 className="slider-title">
                     {slide.firstName} {slide.lastName}
                   </h3>
-                  <ExpandingLine />
+                  <InviewLine />
                   <BlockContent
                     blocks={slide.bio}
                     projectId="1ta3690e"

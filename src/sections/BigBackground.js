@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import BlockContent from "@sanity/block-content-to-react";
-import ExpandingLine from "../components/ExpandingLine";
+import InviewLine from "../components/InviewLine";
+
 import videoThumb from "../images/home_video_thumb.jpg";
 import video from "../images/home_video.mp4";
 
@@ -34,7 +35,7 @@ export default function BigBackground(props) {
           >
             {caption && caption}
           </h2>
-          <ExpandingLine />
+          <InviewLine />
           {content && (
             <div
               className="section-BigBackground-showContent"

@@ -1,5 +1,6 @@
 import React from "react";
-import ExpandingLineYellow from "../components/ExpandingLineYellow";
+import InviewLine from "../components/InviewLine";
+
 import BlockContent from "@sanity/block-content-to-react";
 
 export default function OneBlock(props) {
@@ -17,7 +18,7 @@ export default function OneBlock(props) {
     >
       <div className="homepage-section-container">
         <h4 className="homepage-section-caption">{caption && caption}</h4>
-        <ExpandingLineYellow />
+        <InviewLine color={"#ffd778"} />
         {content && (
           <BlockContent
             blocks={content}

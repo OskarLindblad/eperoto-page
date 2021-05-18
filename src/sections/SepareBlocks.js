@@ -1,6 +1,5 @@
 import React from "react";
 import BlockContent from "@sanity/block-content-to-react";
-//import ExpandingLine from "../components/ExpandingLine";
 
 export default function SepareBlocks(props) {
   const {

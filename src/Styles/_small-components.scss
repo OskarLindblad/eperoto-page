@@ -1,16 +1,25 @@
-.inView-line {
+.inview-line {
   height: 1px;
   margin: 0.411765em 0.070589em 0;
-  background-color: #ff695a;
-  transition: width 2s;
+  transition: width 1s ease-in-out;
   margin-bottom: 26px;
 }
-.inView-line-yellow {
-  height: 1px;
-  margin: 0.411765em 0.070589em 0;
-  background-color: #ffd778;
-  transition: width 2s;
-  margin-bottom: 26px;
+.inview-line-visable {
+  width: 100%;
+}
+
+.inview-line-hide {
+  width: 1px;
+}
+
+/* Loading*/
+.loading-gif {
+  height: 100vh;
+  // remove scrollbar
+  width: calc(100vw - 0.375em);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .slider {
@@ -236,14 +245,4 @@
       flex-direction: column-reverse;
     }
   }
-}
-
-/* Loading*/
-.loading-gif {
-  height: 100vh;
-  // remove scrollbar
-  width: calc(100vw - 0.375em);
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }

@@ -27,6 +27,7 @@ export default function Header({ darkColors }) {
   useEffect(() => {
     setTimeout(function () {
       if (pathname === "/" && darkColors) {
+        // eslint-disable-next-line react-hooks/exhaustive-deps
         hide = true;
       } else {
         hide = false;
