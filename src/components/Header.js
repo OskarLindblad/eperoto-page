@@ -40,9 +40,18 @@ export default function Header({ darkColors, hideInHome }) {
         <img
           className={`logo ${scrolledDown && "logo-scrolledDown"}`}
           id="logo"
-          src={darkColors ? eperotoLogoDark : eperotoLogo}
+          src={eperotoLogoDark}
           alt="Eperoto"
           onClick={() => setMenuToggle(false)}
+          style={{ display: darkColors ? "inline-block" : "none" }}
+        />
+        <img
+          className={`logo ${scrolledDown && "logo-scrolledDown"}`}
+          id="logo"
+          src={eperotoLogo}
+          alt="Eperoto"
+          onClick={() => setMenuToggle(false)}
+          style={{ display: darkColors ? "none" : "inline-block" }}
         />
       </NavLink>
       <div
