@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import eperotoLogo from "../images/Eperoto-Logo-1.png";
 import eperotoLogoDark from "../images/Eperoto-Logo-Dark.png";
