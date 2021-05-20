@@ -96,7 +96,7 @@ export default function Home() {
   const checkBackGround = () => {
     const currentSection = parseInt(
       // - 16 is to trigger earlier
-      (scrollPosition + 1) / (window.innerHeight - 16)
+      (scrollPosition + 1) / (window.innerHeight - 70)
     );
     // If width is lower than 769px change to one color(except on bigBackground)
     if (dimensions.width < 769 || dimensions.height < 800) {

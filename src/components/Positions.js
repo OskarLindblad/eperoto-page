@@ -31,8 +31,11 @@ export default function Position() {
       <main className="Positions-page">
         <div
           className={`logo ${
-            scrolledDown && "Positions-page-header-background"
-          }`}
+            scrolledDown
+              ? "Positions-page-header-background"
+              : "hidden-header-background"
+          } header-background-transition
+            `}
         ></div>
         <h4 className="Positions-page-caption">Open Positions</h4>
 

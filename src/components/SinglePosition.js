@@ -35,7 +35,12 @@ export default function SinglePosition() {
     <>
       <main className="Positions-single">
         <div
-          className={` ${scrolledDown && "Positions-single-header-background"}`}
+          className={` ${
+            scrolledDown
+              ? "Positions-single-header-background"
+              : "hidden-header-background"
+          } header-background-transition
+          `}
         ></div>
 
         <article>

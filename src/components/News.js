@@ -31,7 +31,12 @@ export default function News() {
     <>
       <main className="News-page">
         <div
-          className={` ${scrolledDown && "News-page-header-background"}`}
+          className={` ${
+            scrolledDown
+              ? "News-page-header-background"
+              : "hidden-header-background"
+          } header-background-transition
+          `}
         ></div>
 
         <h4 className="News-page-caption">News</h4>

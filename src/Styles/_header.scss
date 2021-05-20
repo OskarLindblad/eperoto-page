@@ -27,6 +27,14 @@
     }
   }
 
+  .hidden-header-background {
+    height: 12em;
+  }
+
+  .header-background-transition {
+    transition: height 0.35s ease;
+  }
+
   /** MENU */
   #header {
     -webkit-box-pack: justify;

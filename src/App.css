@@ -708,6 +708,15 @@ textarea::placeholder {
   transition: height 0.35s ease-in-out;
 }
 
+.header .hidden-header-background {
+  height: 12em;
+}
+
+.header .header-background-transition {
+  -webkit-transition: height 0.35s ease;
+  transition: height 0.35s ease;
+}
+
 .header #header {
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;

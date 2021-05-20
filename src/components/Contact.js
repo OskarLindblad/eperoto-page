@@ -82,7 +82,12 @@ export default function Contact() {
     <>
       <main className="Contacts-page">
         <div
-          className={` ${scrolledDown && "Contacts-page-header-background"}`}
+          className={` ${
+            scrolledDown
+              ? "Contacts-page-header-background"
+              : "hidden-header-background"
+          } header-background-transition
+`}
         ></div>
         <h4 className="Contacts-page-caption">Contact Us</h4>
         <div className="Contacts-page-field-Name Contacts-page-field">

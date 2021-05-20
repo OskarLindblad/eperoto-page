@@ -37,6 +37,7 @@ export default function Header({ darkColors, hideInHome }) {
       style={{ display: `${hide ? "none" : "flex"}` }}
     >
       <NavLink to="/" exact>
+        {/*Needs to load booth, otherwise it will switch slower*/}
         <img
           className={`logo ${scrolledDown && "logo-scrolledDown"}`}
           id="logo"

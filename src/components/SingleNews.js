@@ -45,7 +45,12 @@ export default function SingleNews() {
     <>
       <main className="News-single">
         <div
-          className={` ${scrolledDown && "News-single-header-background"}`}
+          className={` ${
+            scrolledDown
+              ? "News-single-header-background"
+              : "hidden-header-background"
+          } header-background-transition
+          `}
         ></div>
 
         <article>
