@@ -26,7 +26,7 @@ export default function SinglePosition() {
       .catch(console.error);
   }, [slug]);
   let scrolledDown = false;
-  if (scrollPosition() > 100) {
+  if (scrollPosition() > 50) {
     scrolledDown = true;
   }
   if (!singlePosition) return <div>Loading...</div>;

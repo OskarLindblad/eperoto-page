@@ -136,7 +136,11 @@ export default function Home() {
 
   return (
     <>
-      <Header darkColors={darkColors} style={{ zIndex: "2000" }} />
+      <Header
+        darkColors={darkColors}
+        hideInHome={false}
+        style={{ zIndex: "2000" }}
+      />
       <main>
         <div
           className="header-background"

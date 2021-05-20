@@ -36,7 +36,7 @@ export default function SingleNews() {
   }, [slug]);
 
   let scrolledDown = false;
-  if (scrollPosition() > 100) {
+  if (scrollPosition() > 50) {
     scrolledDown = true;
   }
   if (!singleNews) return <Loading />;

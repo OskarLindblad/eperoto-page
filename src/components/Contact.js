@@ -16,7 +16,7 @@ export default function Contact() {
   const [messageError, setMessageError] = useState("");
 
   let scrolledDown = false;
-  if (scrollPosition() > 100) {
+  if (scrollPosition() > 50) {
     scrolledDown = true;
   }
 
@@ -28,7 +28,8 @@ export default function Contact() {
     setCompanyError("");
     setMessageError("");
 
-    const namePattern = /^[ a-zA-ZàèìòùÀÈÌÒÙáéíóúýÁÉÍÓÚÝâêîôûÂÊÎÔÛãñõÃÑÕäëïöüÿÄËÏÖÜŸçÇßØøÅåÆæœ'`'-]+$/;
+    const namePattern =
+      /^[ a-zA-ZàèìòùÀÈÌÒÙáéíóúýÁÉÍÓÚÝâêîôûÂÊÎÔÛãñõÃÑÕäëïöüÿÄËÏÖÜŸçÇßØøÅåÆæœ'`'-]+$/;
     const emptyPattern = /^$|\s+/;
 
     // Name validation
@@ -41,7 +42,8 @@ export default function Contact() {
       send = false;
     }
 
-    const emailPattern = /^(([^<>()[\].,;:\s@"]+(\.[^<>()[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/i;
+    const emailPattern =
+      /^(([^<>()[\].,;:\s@"]+(\.[^<>()[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/i;
     // Email validation
     if (!emailPattern.test(email)) {
       setEmailError("Invalid email");

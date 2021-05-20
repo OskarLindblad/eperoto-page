@@ -23,7 +23,7 @@ export default function News() {
   }, []);
 
   let scrolledDown = false;
-  if (scrollPosition() > 100) {
+  if (scrollPosition() > 50) {
     scrolledDown = true;
   }
 

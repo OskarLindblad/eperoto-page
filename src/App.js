@@ -12,7 +12,7 @@ import ScrollToTop from "./modules/ScrollToTop";
 function App() {
   return (
     <BrowserRouter>
-      <Header darkColors={false} />
+      <Header hideInHome={true} />
       <main>
         <ScrollToTop />
 

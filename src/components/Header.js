@@ -6,7 +6,7 @@ import { useLocation } from "react-router-dom";
 
 import scrollPosition from "../modules/scrollPosition";
 
-export default function Header({ darkColors }) {
+export default function Header({ darkColors, hideInHome }) {
   const [menuToggle, setMenuToggle] = useState(false);
 
   if (menuToggle) {
@@ -26,7 +26,7 @@ export default function Header({ darkColors }) {
   let hide = false;
   useEffect(() => {
     setTimeout(function () {
-      if (pathname === "/" && darkColors) {
+      if (pathname === "/" && hideInHome) {
         // eslint-disable-next-line react-hooks/exhaustive-deps
         hide = true;
       } else {
