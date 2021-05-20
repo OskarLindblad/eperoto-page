@@ -24,16 +24,12 @@ export default function Header({ darkColors, hideInHome }) {
 
   const { pathname } = useLocation();
   let hide = false;
-  useEffect(() => {
-    setTimeout(function () {
-      if (pathname === "/" && hideInHome) {
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-        hide = true;
-      } else {
-        hide = false;
-      }
-    }, 1000);
-  }, []);
+  if (pathname === "/" && hideInHome) {
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    hide = true;
+  } else {
+    hide = false;
+  }
 
   return (
     <header
