@@ -796,6 +796,16 @@ textarea::placeholder {
   position: absolute;
   width: 100%;
   height: 100%;
+  -webkit-transition: margin-left 2s;
+  transition: margin-left 2s;
+}
+
+.header #cross {
+  margin-left: 0px;
+}
+
+.header #hamburger {
+  margin-left: -7.5px;
 }
 
 .header #nav-menu #hamburger span {
