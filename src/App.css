@@ -759,8 +759,8 @@ textarea::placeholder {
 
 .header #nav-menu {
   margin-top: 5px;
-  -webkit-transition: 0.1s ease margin-right;
-  transition: 0.1s ease margin-right;
+  -webkit-transition: 1s ease margin-right;
+  transition: 1s ease margin-right;
 }
 
 .header #nav-menu.menu_close {

@@ -10,6 +10,7 @@ export default {
       type: "seo-tools", // use seo-tools type
       options: {
         baseUrl: "https://.../", // (REQUIRED) This is the baseUrl for your site
+        // eslint-disable-next-line no-dupe-keys
         baseUrl(doc) {
           return "https://.../"; // for dynamic baseUrls
         },

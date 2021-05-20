@@ -37,23 +37,13 @@ export default function Header({ darkColors, hideInHome }) {
       style={{ display: `${hide ? "none" : "flex"}` }}
     >
       <NavLink to="/" exact>
-        {darkColors ? (
-          <img
-            className={`logo ${scrolledDown && "logo-scrolledDown"}`}
-            id="logo"
-            src={eperotoLogoDark}
-            alt="Eperoto"
-            onClick={() => setMenuToggle(false)}
-          />
-        ) : (
-          <img
-            className={`logo ${scrolledDown && "logo-scrolledDown"}`}
-            id="logo"
-            src={eperotoLogo}
-            alt="Eperoto"
-            onClick={() => setMenuToggle(false)}
-          />
-        )}
+        <img
+          className={`logo ${scrolledDown && "logo-scrolledDown"}`}
+          id="logo"
+          src={darkColors ? eperotoLogoDark : eperotoLogo}
+          alt="Eperoto"
+          onClick={() => setMenuToggle(false)}
+        />
       </NavLink>
       <div
         id="nav-menu"
